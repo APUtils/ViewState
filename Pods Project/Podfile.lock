@@ -1,0 +1,16 @@
+PODS:
+  - ViewState (1.0.0)
+
+DEPENDENCIES:
+  - ViewState (from `../`)
+
+EXTERNAL SOURCES:
+  ViewState:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ViewState: f9f8dca5d6564939bc56d5730261a79faf170fcf
+
+PODFILE CHECKSUM: b3d3a9fd86506808f6bc666c3339c9b4f6fea02f
+
+COCOAPODS: 1.8.4
