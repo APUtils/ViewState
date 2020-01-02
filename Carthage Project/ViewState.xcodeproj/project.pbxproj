@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */; };
+		0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; };
+		0D4DBCDE23BE9977003D5F8B /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */; };
+		0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */; };
+		0D4DBCE123BE9977003D5F8B /* ViewStateLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */; };
+		0D4DBCE223BE9977003D5F8B /* ViewStateLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */; };
+		0D4DBCE323BE9ABC003D5F8B /* UIResponder+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D4DBCE423BE9ABC003D5F8B /* UIScrollView+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D4DBCE523BE9ABC003D5F8B /* UIViewController+ViewState.swift in Headers */ = {isa = PBXBuildFile; fileRef = 0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D4DBD0E23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCFB23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift */; };
 		0D5A7DB823B4FC4A00E0687B /* FBSnapshotTestCase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A7DB923B4FC4A00E0687B /* Nimble_Snapshots.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D5A7DBA23B4FC4A00E0687B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2A7396D2260D99900E97D55 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -74,22 +84,29 @@
 
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
+		0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
+		0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
+		0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ViewState.swift"; sourceTree = "<group>"; };
+		0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewStateLoader.h; sourceTree = "<group>"; };
+		0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewStateLoader.m; sourceTree = "<group>"; };
+		0D4DBCFB23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BecomeFirstResponderViewController.swift; sourceTree = "<group>"; };
 		0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APExtensions.framework; path = ../Carthage/Build/iOS/APExtensions.framework; sourceTree = "<group>"; };
-		1C5A34472F3C42C9D5F152C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1C5A34472F3C42C9D5F152C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
-		28390494B0B4A7796DD7B55A /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
-		37064B493B53566F8541EE78 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		28390494B0B4A7796DD7B55A /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
+		37064B493B53566F8541EE78 /* .travis.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.yaml; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble_Snapshots.framework; path = Carthage/Build/iOS/Nimble_Snapshots.framework; sourceTree = "<group>"; };
-		62C7BF2F24F8002EFF2C05F8 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
-		65F987E9319D6221FB662CD8 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
-		7221EDE9F060F20633CF3CB2 /* podUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
+		62C7BF2F24F8002EFF2C05F8 /* podCheck.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podCheck.command; path = ../podCheck.command; sourceTree = "<group>"; };
+		65F987E9319D6221FB662CD8 /* checkBuild.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
+		7221EDE9F060F20633CF3CB2 /* podUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podUpdate.command; path = "../Pods Project/Scripts/Cocoapods/podUpdate.command"; sourceTree = "<group>"; };
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
-		76B99D89086CCCD2599BB3AD /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
-		956467DCFCEFD7310007D9F2 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
-		AC1EFE4B7E6DDA1FE67B22B5 /* ViewState.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ViewState.podspec; path = ../ViewState.podspec; sourceTree = "<group>"; };
-		C50F8B4A85322A518874FDF3 /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		CF98C5D1FAB5DE4EB64C5514 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
+		76B99D89086CCCD2599BB3AD /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		956467DCFCEFD7310007D9F2 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		AC1EFE4B7E6DDA1FE67B22B5 /* ViewState.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ViewState.podspec; path = ../ViewState.podspec; sourceTree = "<group>"; };
+		C50F8B4A85322A518874FDF3 /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		CF98C5D1FAB5DE4EB64C5514 /* .cocoadocs.yml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.yaml; name = .cocoadocs.yml; path = ../.cocoadocs.yml; sourceTree = "<group>"; };
 		E202681322117D03004CC28A /* ViewState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E202681622117D03004CC28A /* ViewState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewState.h; sourceTree = "<group>"; };
 		E202681722117D03004CC28A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,7 +124,7 @@
 		E2A7396D2260D99900E97D55 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		E2C3136822DF77F300D6797A /* __ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __ReferenceImages; sourceTree = "<group>"; };
 		E2C3136922DF77F300D6797A /* __FailureDiffs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __FailureDiffs; sourceTree = "<group>"; };
-		F2A3275B604D77110F9A75DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F2A3275B604D77110F9A75DB /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +159,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D4DBD0F23BE9DFA003D5F8B /* _Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0D4DBCFB23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift */,
+				E2A7394F2260CFC700E97D55 /* ViewController.swift */,
+				E2A739512260CFC700E97D55 /* Main.storyboard */,
+				0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */,
+			);
+			path = _Screens;
+			sourceTree = "<group>";
+		};
 		1834AC72A69DC91E1F3B8EDA /* _Carthage */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +215,11 @@
 		E2766F332260FFF7003BDA19 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */,
+				0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */,
+				0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */,
+				0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */,
+				0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */,
 			);
 			name = Sources;
 			path = ../../ViewState/Classes;
@@ -195,12 +228,11 @@
 		E2A7394C2260CFC700E97D55 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				0D4DBD0F23BE9DFA003D5F8B /* _Screens */,
 				E2A7394D2260CFC700E97D55 /* AppDelegate.swift */,
-				E2A7394F2260CFC700E97D55 /* ViewController.swift */,
-				E2A739512260CFC700E97D55 /* Main.storyboard */,
 				E2A739542260CFC800E97D55 /* Assets.xcassets */,
-				E2A739562260CFC800E97D55 /* LaunchScreen.storyboard */,
 				E2A739592260CFC800E97D55 /* Info.plist */,
+				E2A739562260CFC800E97D55 /* LaunchScreen.storyboard */,
 			);
 			name = Example;
 			path = ../Example;
@@ -256,6 +288,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4DBCE123BE9977003D5F8B /* ViewStateLoader.h in Headers */,
+				0D4DBCE323BE9ABC003D5F8B /* UIResponder+ViewState.swift in Headers */,
+				0D4DBCE423BE9ABC003D5F8B /* UIScrollView+ViewState.swift in Headers */,
+				0D4DBCE523BE9ABC003D5F8B /* UIViewController+ViewState.swift in Headers */,
 				E202681822117D03004CC28A /* ViewState.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +383,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E202680D22117D03004CC28A /* Build configuration list for PBXProject "PROJECTNAME" */;
+			buildConfigurationList = E202680D22117D03004CC28A /* Build configuration list for PBXProject "ViewState" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -458,6 +494,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4DBCDE23BE9977003D5F8B /* UIScrollView+ViewState.swift in Sources */,
+				0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */,
+				0D4DBCE223BE9977003D5F8B /* ViewStateLoader.m in Sources */,
+				0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +505,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4DBD0E23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift in Sources */,
+				0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */,
 				E2A739502260CFC700E97D55 /* ViewController.swift in Sources */,
 				E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */,
 			);
@@ -640,6 +682,7 @@
 		E202681C22117D03004CC28A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -660,6 +703,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.ViewState";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -667,6 +712,7 @@
 		E202681D22117D03004CC28A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -687,6 +733,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.anton-plebanovich.ViewState";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -784,7 +831,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E202680D22117D03004CC28A /* Build configuration list for PBXProject "PROJECTNAME" */ = {
+		E202680D22117D03004CC28A /* Build configuration list for PBXProject "ViewState" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E202681922117D03004CC28A /* Debug */,

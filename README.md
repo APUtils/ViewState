@@ -6,17 +6,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/ViewState.svg?style=flat)](http://cocoapods.org/pods/ViewState)
 [![CI Status](http://img.shields.io/travis/APUtils/ViewState.svg?style=flat)](https://travis-ci.org/APUtils/ViewState)
 
-TODO
+Adds an ability to check current view controller's view state and also to subscribe to view state changes notifications. Also, adds several helpful properties to easily configure some complex behaviors in xibs and storyboards.
 
 ## Example
 
 Clone the repo and then open `Carthage Project/ViewState.xcodeproj`
-
-## GIF animation
-
-TODO
-
-<img src="Example/ViewState/<#NAME#>.gif"/>
 
 ## Installation
 
@@ -41,7 +35,19 @@ pod 'ViewState', '~> 1.0'
 
 ## Usage
 
-TODO
+#### UIViewController subclasses
+
+- Extends UIViewController with .viewState enum property. Possible cases: `.notLoaded`, `.didLoad`, `.willAppear`, `.didAppear`, `.willDisappear`, `.didDisappear`.
+- Every UIViewController starts to send notifications about its state change. Available notifications to observe: `.UIViewControllerWillMoveToParentViewController`, `.UIViewControllerViewDidLoad`, `.UIViewControllerViewWillAppear`, `.UIViewControllerViewDidAppear`, `.UIViewControllerViewWillDisappear`, `.UIViewControllerViewDidDisappear`. You could check `userInfo` notification's dictionary for parameters if needed.
+- Adds `.hideKeyboardOnTouch` @IBInspectable property to hide keyboard on touch outside.
+
+#### UIResponder subclasses
+
+- Adds `.becomeFirstResponderOnViewDidAppear` @IBInspectable property to become first responser on `viewDidAppear`.
+
+#### UIScrollView subclasses
+
+- Adds `.flashScrollIndicatorsOnViewDidAppear` @IBInspectable property to flash scroll indicators on `viewDidAppear`.
 
 See example and test projects for more details.
 
