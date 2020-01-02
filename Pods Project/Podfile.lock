@@ -1,16 +1,35 @@
 PODS:
+  - APExtensions (7.0.1):
+    - APExtensions/Abstractions (= 7.0.1)
+    - APExtensions/Core (= 7.0.1)
+    - APExtensions/Storyboard (= 7.0.1)
+    - APExtensions/ViewConfiguration (= 7.0.1)
+  - APExtensions/Abstractions (7.0.1)
+  - APExtensions/Core (7.0.1)
+  - APExtensions/Storyboard (7.0.1)
+  - APExtensions/ViewConfiguration (7.0.1)
   - ViewState (1.0.0)
 
 DEPENDENCIES:
+  - APExtensions (from `https://github.com/APUtils/APExtensions`, branch `master`)
   - ViewState (from `../`)
 
 EXTERNAL SOURCES:
+  APExtensions:
+    :branch: master
+    :git: https://github.com/APUtils/APExtensions
   ViewState:
     :path: "../"
 
-SPEC CHECKSUMS:
-  ViewState: f9f8dca5d6564939bc56d5730261a79faf170fcf
+CHECKOUT OPTIONS:
+  APExtensions:
+    :commit: 0d1ff953cf01c670cc40ad789db983be4d67128e
+    :git: https://github.com/APUtils/APExtensions
 
-PODFILE CHECKSUM: b3d3a9fd86506808f6bc666c3339c9b4f6fea02f
+SPEC CHECKSUMS:
+  APExtensions: 681fbb94d87100ff8eeb74e78ace0ff9612979e9
+  ViewState: 78aa77483e74e592c22e841619b853bc686843be
+
+PODFILE CHECKSUM: 7c20089f400df5ab3844d9bcbd13d2af81e82e21
 
 COCOAPODS: 1.8.4
