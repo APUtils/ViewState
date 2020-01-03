@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */; };
+		0D47E3FD23BF183000C4BFDC /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7928D3F4CABF7B13F71317FF /* ViewState.framework */; };
 		0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; };
 		0D4DBCDE23BE9977003D5F8B /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */; };
 		0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */; };
@@ -24,7 +25,6 @@
 		0DBC7CE823B9577200CD0EA1 /* APExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; };
 		E202681822117D03004CC28A /* ViewState.h in Headers */ = {isa = PBXBuildFile; fileRef = E202681622117D03004CC28A /* ViewState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E275E06F229FF84E00E9900C /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E202681322117D03004CC28A /* ViewState.framework */; };
-		E275E08322A03A8900E9900C /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E202681322117D03004CC28A /* ViewState.framework */; };
 		E275E08422A03A8900E9900C /* ViewState.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E202681322117D03004CC28A /* ViewState.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394D2260CFC700E97D55 /* AppDelegate.swift */; };
 		E2A739502260CFC700E97D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A7394F2260CFC700E97D55 /* ViewController.swift */; };
@@ -103,6 +103,7 @@
 		722BFDE9DE58393B9D916719 /* carthageRemove.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageRemove.command; path = Scripts/Carthage/carthageRemove.command; sourceTree = "<group>"; };
 		75997ED1E9FAC56B9BEC3F0E /* carthageAdd.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageAdd.command; path = Scripts/Carthage/carthageAdd.command; sourceTree = "<group>"; };
 		76B99D89086CCCD2599BB3AD /* .gitignore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		7928D3F4CABF7B13F71317FF /* ViewState.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ViewState.framework; path = Carthage/Build/iOS/ViewState.framework; sourceTree = "<group>"; };
 		956467DCFCEFD7310007D9F2 /* podPush.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
 		AC1EFE4B7E6DDA1FE67B22B5 /* ViewState.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ViewState.podspec; path = ../ViewState.podspec; sourceTree = "<group>"; };
 		C50F8B4A85322A518874FDF3 /* CHANGELOG.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -139,8 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E275E08322A03A8900E9900C /* ViewState.framework in Frameworks */,
 				0DBC7CE823B9577200CD0EA1 /* APExtensions.framework in Frameworks */,
+				0D47E3FD23BF183000C4BFDC /* ViewState.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,9 +275,10 @@
 				1834AC72A69DC91E1F3B8EDA /* _Carthage */,
 				0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */,
 				0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */,
-				40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */,
 				E2A7396D2260D99900E97D55 /* Nimble.framework */,
+				40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */,
 				E2A7396C2260D99900E97D55 /* Quick.framework */,
+				7928D3F4CABF7B13F71317FF /* ViewState.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -458,12 +460,14 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/APExtensions.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ViewState.framework",
 			);
 			name = "Carthage Copy";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APExtensions.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ViewState.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
