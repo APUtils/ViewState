@@ -14,18 +14,6 @@ private var flashScrollIndicatorsOnViewDidAppearAssociationKey = 0
 
 
 public extension UIScrollView {
-    private var _viewController: UIViewController? {
-        var nextResponder: UIResponder? = self
-        while nextResponder != nil {
-            nextResponder = nextResponder?.next
-            
-            if let viewController = nextResponder as? UIViewController {
-                return viewController
-            }
-        }
-        
-        return nil
-    }
     
     private var _flashScrollIndicatorsOnViewDidAppear: Bool {
         get {
@@ -53,7 +41,7 @@ public extension UIScrollView {
                     if viewController.viewState == .didAppear {
                         // Already appeared
                         self._flashScrollIndicatorsOnViewDidAppear = false
-                        self.becomeFirstResponder()
+                        self.flashScrollIndicators()
                     } else {
                         // Wait until appeared
                         var token: NSObjectProtocol!

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */; };
 		0D47E41623BF219F00C4BFDC /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7928D3F4CABF7B13F71317FF /* ViewState.framework */; };
+		0D47E41823BF32A500C4BFDC /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */; };
+		0D47E41A23BF32E800C4BFDC /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */; };
+		0D47E41F23BF3A4E00C4BFDC /* TableViewReload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */; };
+		0D47E42123BF3A4E00C4BFDC /* TableViewReloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41E23BF3A4E00C4BFDC /* TableViewReloadVC.swift */; };
 		0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; };
 		0D4DBCDE23BE9977003D5F8B /* UIScrollView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */; };
 		0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */; };
@@ -85,6 +89,10 @@
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
+		0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewReload.storyboard; sourceTree = "<group>"; };
+		0D47E41E23BF3A4E00C4BFDC /* TableViewReloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewReloadVC.swift; sourceTree = "<group>"; };
 		0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
 		0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ViewState.swift"; sourceTree = "<group>"; };
 		0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ViewState.swift"; sourceTree = "<group>"; };
@@ -160,9 +168,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D47E41B23BF3A3800C4BFDC /* _TableViewReload */ = {
+			isa = PBXGroup;
+			children = (
+				0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */,
+				0D47E41E23BF3A4E00C4BFDC /* TableViewReloadVC.swift */,
+			);
+			path = _TableViewReload;
+			sourceTree = "<group>";
+		};
 		0D4DBD0F23BE9DFA003D5F8B /* _Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0D47E41B23BF3A3800C4BFDC /* _TableViewReload */,
 				0D4DBCFB23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift */,
 				E2A7394F2260CFC700E97D55 /* ViewController.swift */,
 				E2A739512260CFC700E97D55 /* Main.storyboard */,
@@ -218,6 +236,8 @@
 			children = (
 				0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */,
 				0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */,
+				0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */,
+				0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */,
 				0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */,
 				0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */,
 				0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */,
@@ -420,6 +440,7 @@
 				E2A739582260CFC800E97D55 /* LaunchScreen.storyboard in Resources */,
 				E2A739552260CFC800E97D55 /* Assets.xcassets in Resources */,
 				E2A739532260CFC700E97D55 /* Main.storyboard in Resources */,
+				0D47E41F23BF3A4E00C4BFDC /* TableViewReload.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +523,8 @@
 				0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */,
 				0D4DBCE223BE9977003D5F8B /* ViewStateLoader.m in Sources */,
 				0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */,
+				0D47E41A23BF32E800C4BFDC /* UIView+Utils.swift in Sources */,
+				0D47E41823BF32A500C4BFDC /* UITableView+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4DBD0E23BE9D68003D5F8B /* BecomeFirstResponderViewController.swift in Sources */,
+				0D47E42123BF3A4E00C4BFDC /* TableViewReloadVC.swift in Sources */,
 				0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */,
 				E2A739502260CFC700E97D55 /* ViewController.swift in Sources */,
 				E2A7394E2260CFC700E97D55 /* AppDelegate.swift in Sources */,

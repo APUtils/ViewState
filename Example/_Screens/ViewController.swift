@@ -19,4 +19,11 @@ final class ViewController: UIViewController {
         
         
     }
+    
+    // ******************************* MARK: - Actions
+    
+    @IBAction private func onTableViewReloadTap(_ sender: Any) {
+        let vc = TableViewReloadVC.create()
+        navigationController?.pushViewController(vc)
+    }
 }

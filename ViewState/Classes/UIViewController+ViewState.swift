@@ -125,18 +125,23 @@ public extension ViewControllerExtendedStates {
 
 extension UIViewController {
     /// View controller view's state enum
-    public enum ViewState {
-        case notLoaded
-        case didLoad
-        case willAppear
-        case didAttach
-        case didAppear
-        case willDisappear
-        case didDisappear
+    public enum ViewState: Int {
+        case notLoaded = 0
+        case didLoad = 1
+        case willAppear = 2
+        case didAttach = 3
+        case didAppear = 4
+        case willDisappear = 5
+        case didDisappear = 6
+        
+        /// Return whether state is one of passed ones.
+        func isOneOf(states: [ViewState]) -> Bool {
+            return states.contains(self)
+        }
     }
     
     /// View controller view's state
-    public var viewState: ViewState {
+    open var viewState: ViewState {
         get {
             if let state = objc_getAssociatedObject(self, &associatedStateKey) as? ViewState {
                 return state
