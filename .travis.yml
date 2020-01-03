@@ -9,14 +9,12 @@ language: objective-c
 cache:
     directories:
      - Carthage
-     - Example/Pods
-     
-podfile: Example/Podfile
+     - 'Pods Project/Pods'
 
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod repo update
-- pod install --project-directory=Example
+- pod install --project-directory='Pods Project'
 - brew install carthage
 - carthage bootstrap --platform iOS --cache-builds
 
