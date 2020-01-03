@@ -12,6 +12,8 @@
 		0D33EA6323BEB05B00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5F23BEB05B00DE5C50 /* NavigationController.swift */; };
 		0D33EA6423BEB05B00DE5C50 /* BecomeFirstResponderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA6023BEB05B00DE5C50 /* BecomeFirstResponderViewController.swift */; };
 		0D47705723B79E79005209A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D47705523B79E79005209A5 /* LaunchScreen.storyboard */; };
+		0D47E42523BF419400C4BFDC /* TableViewReload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D47E42323BF419300C4BFDC /* TableViewReload.storyboard */; };
+		0D47E42623BF419400C4BFDC /* TableViewReloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E42423BF419300C4BFDC /* TableViewReloadVC.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Assets.xcassets */; };
 		832AE44F950023EABC5CD8CC /* Pods_ViewState_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D9AA213686BC27EF1F457E /* Pods_ViewState_Example.framework */; };
@@ -23,6 +25,8 @@
 		0D33EA5F23BEB05B00DE5C50 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		0D33EA6023BEB05B00DE5C50 /* BecomeFirstResponderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BecomeFirstResponderViewController.swift; sourceTree = "<group>"; };
 		0D47705623B79E79005209A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D47E42323BF419300C4BFDC /* TableViewReload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewReload.storyboard; sourceTree = "<group>"; };
+		0D47E42423BF419300C4BFDC /* TableViewReloadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReloadVC.swift; sourceTree = "<group>"; };
 		3CE575328DA2F3DC72C33211 /* Pods-ViewState_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewState_Example.release.xcconfig"; path = "Target Support Files/Pods-ViewState_Example/Pods-ViewState_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ViewState_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewState_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,12 +51,22 @@
 		0D33EA5B23BEB05B00DE5C50 /* _Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0D47E42223BF419300C4BFDC /* _TableViewReload */,
 				0D33EA5C23BEB05B00DE5C50 /* ViewController.swift */,
 				0D33EA5D23BEB05B00DE5C50 /* Main.storyboard */,
 				0D33EA5F23BEB05B00DE5C50 /* NavigationController.swift */,
 				0D33EA6023BEB05B00DE5C50 /* BecomeFirstResponderViewController.swift */,
 			);
 			path = _Screens;
+			sourceTree = "<group>";
+		};
+		0D47E42223BF419300C4BFDC /* _TableViewReload */ = {
+			isa = PBXGroup;
+			children = (
+				0D47E42323BF419300C4BFDC /* TableViewReload.storyboard */,
+				0D47E42423BF419300C4BFDC /* TableViewReloadVC.swift */,
+			);
+			path = _TableViewReload;
 			sourceTree = "<group>";
 		};
 		52590011D0134C9BFE5E585D /* Pods */ = {
@@ -199,6 +213,7 @@
 				0D47705723B79E79005209A5 /* LaunchScreen.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Assets.xcassets in Resources */,
 				0D33EA6223BEB05B00DE5C50 /* Main.storyboard in Resources */,
+				0D47E42523BF419400C4BFDC /* TableViewReload.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +273,7 @@
 				0D33EA6323BEB05B00DE5C50 /* NavigationController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				0D33EA6423BEB05B00DE5C50 /* BecomeFirstResponderViewController.swift in Sources */,
+				0D47E42623BF419400C4BFDC /* TableViewReloadVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
