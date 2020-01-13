@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xTI-aG-cQ7">
             <objects>
-                <navigationController id="Uxq-rq-JTA" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Uxq-rq-JTA" customClass="NavigationController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F8U-iN-Wiy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--Navigation Controller-->
         <scene sceneID="FCL-UH-k6L">
             <objects>
-                <navigationController id="kxf-dm-r9e" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="kxf-dm-r9e" customClass="NavigationController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aI6-QU-yct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3h-qj-VSK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -96,7 +96,7 @@
         <!--Become First Responder View Controller-->
         <scene sceneID="MDQ-ho-HZP">
             <objects>
-                <viewController id="D7d-ig-OmE" customClass="BecomeFirstResponderViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D7d-ig-OmE" customClass="BecomeFirstResponderViewController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XhD-Bw-aXI"/>
                         <viewControllerLayoutGuide type="bottom" id="jlP-WM-3Ka"/>

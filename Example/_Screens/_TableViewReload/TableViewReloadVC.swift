@@ -34,6 +34,8 @@ final class TableViewReloadVC: UIViewController {
         super.viewDidAppear(animated)
         tableView.reloadDataWhenPossible()
         
+        tableView.flashScrollIndicatorsOnViewDidAppear = false
+        
         doOnce(key: "TableViewReloadVC.viewDidAppear") {
             let vc = UIViewController()
             vc.view.backgroundColor = .white
