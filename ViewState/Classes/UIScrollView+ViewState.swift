@@ -50,13 +50,13 @@ public extension UIScrollView {
                     if viewController.viewState == .didAppear {
                         // Already appeared
                         _self.flashScrollIndicators()
-                    } else {
-                        // Wait until appeared
-                        _self.flashScrollIndicatorsNotificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: viewController, queue: nil) { _ in
-                            guard let _self = self else { return }
-                            // Reset this flag so we can assign it again later if needed
-                            _self.flashScrollIndicators()
-                        }
+                    }
+                    
+                    // Perform each time on did appear
+                    _self.flashScrollIndicatorsNotificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: viewController, queue: nil) { _ in
+                        guard let _self = self else { return }
+                        // Reset this flag so we can assign it again later if needed
+                        _self.flashScrollIndicators()
                     }
                 }
                 

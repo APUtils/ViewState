@@ -189,6 +189,13 @@
 			path = _Screens;
 			sourceTree = "<group>";
 		};
+		0DC724F523CD16D3005039BC /* _Internal Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "_Internal Extensions";
+			sourceTree = "<group>";
+		};
 		1834AC72A69DC91E1F3B8EDA /* _Carthage */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +241,7 @@
 		E2766F332260FFF7003BDA19 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0DC724F523CD16D3005039BC /* _Internal Extensions */,
 				0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */,
 				0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */,
 				0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */,
