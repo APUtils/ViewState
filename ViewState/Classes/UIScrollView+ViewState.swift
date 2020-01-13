@@ -40,7 +40,6 @@ public extension UIScrollView {
                     
                     if viewController.viewState == .didAppear {
                         // Already appeared
-                        self._flashScrollIndicatorsOnViewDidAppear = false
                         self.flashScrollIndicators()
                     } else {
                         // Wait until appeared
@@ -49,7 +48,6 @@ public extension UIScrollView {
                             if let token = token { NotificationCenter.default.removeObserver(token) }
                             guard let `self` = self else { return }
                             // Reset this flag so we can assign it again later if needed
-                            self._flashScrollIndicatorsOnViewDidAppear = false
                             self.flashScrollIndicators()
                         }
                     }
