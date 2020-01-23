@@ -235,31 +235,31 @@ extension UIViewController {
 
 // ******************************* MARK: - Keyboard
 
-private var c_hideRecognizerAssociationKey = 0
-private var c_hideKeyboardGestureDelegateAssociationKey = 0
+private var c_hideKeyboardGestureRecognizerAssociationKey = 0
+private var c_hideKeyboardGestureRecognizerDelegateAssociationKey = 0
 
-private class HideKeyboardGestureDelegate: NSObject, UIGestureRecognizerDelegate {
+private class HideKeyboardGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return !(touch.view is UIButton)
     }
 }
 
 public extension UIViewController {
-    private var hideRecognizer: UITapGestureRecognizer? {
+    private var hideKeyboardGestureRecognizer: UITapGestureRecognizer? {
         get {
-            return objc_getAssociatedObject(self, &c_hideRecognizerAssociationKey) as? UITapGestureRecognizer
+            return objc_getAssociatedObject(self, &c_hideKeyboardGestureRecognizerAssociationKey) as? UITapGestureRecognizer
         }
         set {
-            objc_setAssociatedObject(self, &c_hideRecognizerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &c_hideKeyboardGestureRecognizerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
-    private var hideKeyboardGestureDelegate: UIGestureRecognizerDelegate? {
+    private var hideKeyboardGestureRecognizerDelegate: UIGestureRecognizerDelegate? {
         get {
-            return objc_getAssociatedObject(self, &c_hideKeyboardGestureDelegateAssociationKey) as? UIGestureRecognizerDelegate
+            return objc_getAssociatedObject(self, &c_hideKeyboardGestureRecognizerDelegateAssociationKey) as? UIGestureRecognizerDelegate
         }
         set {
-            objc_setAssociatedObject(self, &c_hideKeyboardGestureDelegateAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &c_hideKeyboardGestureRecognizerDelegateAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -270,35 +270,35 @@ public extension UIViewController {
     /// Allows to hide keyboard when touch outside
     @IBInspectable var hideKeyboardOnTouch: Bool {
         get {
-            return hideRecognizer != nil
+            return hideKeyboardGestureRecognizer != nil
         }
         set {
             if newValue {
-                if hideRecognizer == nil {
-                    let hideRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController._endEditing))
-                    hideKeyboardGestureDelegate = HideKeyboardGestureDelegate()
-                    hideRecognizer.delegate = hideKeyboardGestureDelegate
-                    hideRecognizer.cancelsTouchesInView = false
-                    self.hideRecognizer = hideRecognizer
+                if hideKeyboardGestureRecognizer == nil {
+                    let hideKeyboardGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController._endEditing))
+                    hideKeyboardGestureRecognizerDelegate = HideKeyboardGestureRecognizerDelegate()
+                    hideKeyboardGestureRecognizer.delegate = hideKeyboardGestureRecognizerDelegate
+                    hideKeyboardGestureRecognizer.cancelsTouchesInView = false
+                    self.hideKeyboardGestureRecognizer = hideKeyboardGestureRecognizer
                     
                     if isViewLoaded {
-                        view.addGestureRecognizer(hideRecognizer)
+                        view.addGestureRecognizer(hideKeyboardGestureRecognizer)
                     } else {
                         var notificationToken: NSObjectProtocol!
                         notificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
                             if let notificationToken = notificationToken { NotificationCenter.default.removeObserver(notificationToken) }
                             
-                            if let hideRecognizer = self?.hideRecognizer {
+                            if let hideRecognizer = self?.hideKeyboardGestureRecognizer {
                                 self?.view.addGestureRecognizer(hideRecognizer)
                             }
                         })
                     }
                 }
             } else {
-                if let hideRecognizer = hideRecognizer {
+                if let hideRecognizer = hideKeyboardGestureRecognizer {
                     view.removeGestureRecognizer(hideRecognizer)
-                    self.hideRecognizer = nil
-                    self.hideKeyboardGestureDelegate = nil
+                    self.hideKeyboardGestureRecognizer = nil
+                    self.hideKeyboardGestureRecognizerDelegate = nil
                 }
             }
         }
