@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxq-rq-JTA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxq-rq-JTA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xTI-aG-cQ7">
             <objects>
-                <navigationController id="Uxq-rq-JTA" customClass="NavigationController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Uxq-rq-JTA" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F8U-iN-Wiy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,10 +79,10 @@
         <!--Navigation Controller-->
         <scene sceneID="FCL-UH-k6L">
             <objects>
-                <navigationController id="kxf-dm-r9e" customClass="NavigationController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="kxf-dm-r9e" customClass="NavigationController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aI6-QU-yct"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3h-qj-VSK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -96,17 +96,17 @@
         <!--Become First Responder View Controller-->
         <scene sceneID="MDQ-ho-HZP">
             <objects>
-                <viewController id="D7d-ig-OmE" customClass="BecomeFirstResponderViewController" customModule="ViewState_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D7d-ig-OmE" customClass="BecomeFirstResponderViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XhD-Bw-aXI"/>
                         <viewControllerLayoutGuide type="bottom" id="jlP-WM-3Ka"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BZM-nH-2Y8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3d1-ow-FZk">
-                                <rect key="frame" x="16" y="96" width="382" height="124"/>
+                                <rect key="frame" x="16" y="64" width="382" height="124"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNv-de-qpN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
@@ -139,10 +139,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-St-zt0">
+                                <rect key="frame" x="184" y="406" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3d1-ow-FZk" secondAttribute="trailing" constant="16" id="2xu-h9-OnA"/>
+                            <constraint firstItem="Zgv-St-zt0" firstAttribute="centerY" secondItem="BZM-nH-2Y8" secondAttribute="centerY" id="En5-Fe-jyg"/>
+                            <constraint firstItem="Zgv-St-zt0" firstAttribute="centerX" secondItem="BZM-nH-2Y8" secondAttribute="centerX" id="bYN-1a-QFT"/>
                             <constraint firstItem="3d1-ow-FZk" firstAttribute="top" secondItem="XhD-Bw-aXI" secondAttribute="bottom" constant="8" id="cdY-r4-qPb"/>
                             <constraint firstItem="3d1-ow-FZk" firstAttribute="leading" secondItem="BZM-nH-2Y8" secondAttribute="leading" constant="16" id="hA8-df-Pog"/>
                         </constraints>
@@ -162,6 +168,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cmS-iH-H7F"/>
+        <segue reference="oPf-UA-qLc"/>
     </inferredMetricsTieBreakers>
 </document>

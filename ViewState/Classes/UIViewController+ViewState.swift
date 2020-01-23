@@ -235,15 +235,31 @@ extension UIViewController {
 
 // ******************************* MARK: - Keyboard
 
-private var hideRecognizerAssociationKey = 0
+private var c_hideRecognizerAssociationKey = 0
+private var c_hideKeyboardGestureDelegateAssociationKey = 0
+
+private class HideKeyboardGestureDelegate: NSObject, UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return !(touch.view is UIButton)
+    }
+}
 
 public extension UIViewController {
     private var hideRecognizer: UITapGestureRecognizer? {
         get {
-            return objc_getAssociatedObject(self, &hideRecognizerAssociationKey) as? UITapGestureRecognizer
+            return objc_getAssociatedObject(self, &c_hideRecognizerAssociationKey) as? UITapGestureRecognizer
         }
         set {
-            objc_setAssociatedObject(self, &hideRecognizerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &c_hideRecognizerAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private var hideKeyboardGestureDelegate: UIGestureRecognizerDelegate? {
+        get {
+            return objc_getAssociatedObject(self, &c_hideKeyboardGestureDelegateAssociationKey) as? UIGestureRecognizerDelegate
+        }
+        set {
+            objc_setAssociatedObject(self, &c_hideKeyboardGestureDelegateAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -260,6 +276,8 @@ public extension UIViewController {
             if newValue {
                 if hideRecognizer == nil {
                     let hideRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController._endEditing))
+                    hideKeyboardGestureDelegate = HideKeyboardGestureDelegate()
+                    hideRecognizer.delegate = hideKeyboardGestureDelegate
                     hideRecognizer.cancelsTouchesInView = false
                     self.hideRecognizer = hideRecognizer
                     
@@ -280,6 +298,7 @@ public extension UIViewController {
                 if let hideRecognizer = hideRecognizer {
                     view.removeGestureRecognizer(hideRecognizer)
                     self.hideRecognizer = nil
+                    self.hideKeyboardGestureDelegate = nil
                 }
             }
         }
