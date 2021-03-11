@@ -285,6 +285,8 @@ public extension UIViewController {
                         view.addGestureRecognizer(hideKeyboardGestureRecognizer)
                     } else {
                         var notificationToken: NSObjectProtocol!
+                        
+                        // TODO: There is a possible memory leak if view is never loaded and VC is dealocated. Better solution would be to have closures executed at a specific time and dealocated together with VC.
                         notificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
                             if let notificationToken = notificationToken { NotificationCenter.default.removeObserver(notificationToken) }
                             
