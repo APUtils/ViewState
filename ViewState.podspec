@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ViewState'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Adds an ability to check a view controller\'s view state.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Adds an ability to check a view controller's view state and also to subscribe to
   s.source           = { :git => 'https://github.com/APUtils/ViewState.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_versions = ['5.1']
 
   s.source_files = 'ViewState/Classes/**/*'

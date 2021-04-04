@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */; };
+		0D45AB1B26194E3200B575FF /* APExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D45AB1D26194E6400B575FF /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; };
+		0D45AB1E26194E6800B575FF /* RoutableLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D47E41623BF219F00C4BFDC /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7928D3F4CABF7B13F71317FF /* ViewState.framework */; };
 		0D47E41823BF32A500C4BFDC /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */; };
 		0D47E41A23BF32E800C4BFDC /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */; };
@@ -79,7 +82,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0D45AB1B26194E3200B575FF /* APExtensions.framework in Embed Frameworks */,
 				E275E08422A03A8900E9900C /* ViewState.framework in Embed Frameworks */,
+				0D45AB1E26194E6800B575FF /* RoutableLogger.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +94,7 @@
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0D45AB1C26194E6400B575FF /* RoutableLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutableLogger.framework; path = ../Carthage/Build/iOS/RoutableLogger.framework; sourceTree = "<group>"; };
 		0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
 		0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewReload.storyboard; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D45AB1D26194E6400B575FF /* RoutableLogger.framework in Frameworks */,
 				0DBC7CE823B9577200CD0EA1 /* APExtensions.framework in Frameworks */,
 				0D47E41623BF219F00C4BFDC /* ViewState.framework in Frameworks */,
 			);
@@ -306,6 +313,7 @@
 				E2A7396D2260D99900E97D55 /* Nimble.framework */,
 				40B2AC5FE675C1BC6FEA20DC /* Nimble_Snapshots.framework */,
 				E2A7396C2260D99900E97D55 /* Quick.framework */,
+				0D45AB1C26194E6400B575FF /* RoutableLogger.framework */,
 				7928D3F4CABF7B13F71317FF /* ViewState.framework */,
 			);
 			name = Frameworks;
@@ -355,7 +363,6 @@
 				E2A739472260CFC700E97D55 /* Sources */,
 				E2A739482260CFC700E97D55 /* Frameworks */,
 				E2A739492260CFC700E97D55 /* Resources */,
-				7A78314AEA7299684D67A83C /* Carthage Copy */,
 				E275E08722A03A8900E9900C /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -395,7 +402,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					E202681222117D03004CC28A = {
@@ -479,28 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "source ~/.bash_profile\nenv -i GITHUB_ACCESS_TOKEN=\"$GITHUB_ACCESS_TOKEN\" DEVELOPER_DIR=\"$DEVELOPER_DIR\" PATH=\"$PATH\" bash \"Scripts/Carthage/carthageInstall.command\"\n";
-		};
-		7A78314AEA7299684D67A83C /* Carthage Copy */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/APExtensions.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ViewState.framework",
-			);
-			name = "Carthage Copy";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/APExtensions.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ViewState.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		E67432110B43CFE285604644 /* Carthage Install */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -643,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -702,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -785,7 +770,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ../Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -807,7 +791,6 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ../Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
