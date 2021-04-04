@@ -240,7 +240,8 @@ private var c_hideKeyboardGestureRecognizerDelegateAssociationKey = 0
 
 private class HideKeyboardGestureRecognizerDelegate: NSObject, UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        return !(touch.view is UIButton)
+        // Do not dismiss on contol element clicks. Like button, switch or segment.
+        return !(touch.view is UIControl)
     }
 }
 
