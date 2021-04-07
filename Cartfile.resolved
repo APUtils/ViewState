@@ -1,7 +1,3 @@
-github "APUtils/APExtensions" "e49fc97ab7ae099cdfbca6ed7bbee4ff09692b11"
-github "APUtils/LogsManager" "9.1.5"
-github "APUtils/ViewState" "36ce41679a5fbb9dc6cd24a74897d728565233b0"
-github "CocoaLumberjack/CocoaLumberjack" "3.7.0"
 github "Quick/Nimble" "v9.0.0"
 github "Quick/Quick" "v3.1.2"
 github "ashfurrow/Nimble-Snapshots" "9.1.0"

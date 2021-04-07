@@ -6,11 +6,10 @@
 //  Copyright © 2019 Anton Plebanovich All rights reserved.
 //
 
-import APExtensions
 import UIKit
 import ViewState
 
-final class BecomeFirstResponderViewController: UIViewController, InstantiatableFromStoryboard {
+final class BecomeFirstResponderViewController: UIViewController {
     
     // ******************************* MARK: - @IBOutlets
     

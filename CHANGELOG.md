@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.
 `ViewState` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.1](https://github.com/APUtils/ViewState/releases/tag/1.1.1)
+Released on 07/04/2021.
+
+#### Added
+- Swift Package Manager Support [@trusk89]
+
 ## [1.1.0](https://github.com/APUtils/ViewState/releases/tag/1.1.0)
 Released on 04/04/2020.
 
