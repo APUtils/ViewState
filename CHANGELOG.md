@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 Released on 07/04/2021.
 
 #### Added
-- Swift Package Manager Support
+- Swift Package Manager Support [@trusk89]
 
 ## [1.1.0](https://github.com/APUtils/ViewState/releases/tag/1.1.0)
 Released on 04/04/2020.

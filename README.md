@@ -33,6 +33,20 @@ it, simply add the following line to your Podfile:
 pod 'ViewState', '~> 1.0'
 ```
 
+#### Swift Package Manager
+
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler.
+
+Once you have your Swift package set up, adding `ViewState` as a dependency is as easy as adding it to the dependencies value of your `Package.swift`.
+
+**⚠️ WARNING** You must call `ViewState.setupOnce()` somewhere in you code or it won't work. The issue is that SPM doesn't support mixed source code and the framework can't load himself without Objective-C part.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/APExtensions/ViewState.git")
+]
+```
+
 ## Usage
 
 #### UIViewController subclasses

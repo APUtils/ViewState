@@ -47,24 +47,24 @@ private func swizzleMethods(class: AnyClass, originalSelector: Selector, origina
 
 // ******************************* MARK: - Load
 
-private extension UIViewController {
-    @objc private static var setupOnce: Int {
-        struct Private {
-            static var setupOnce: Int = {
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParent:)), swizzledSelector: #selector(swizzled_willMove(toParent:)))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(becomeFirstResponder), swizzledSelector: #selector(swizzled_becomeFirstResponder))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillDisappear(_:)), swizzledSelector: #selector(swizzled_viewWillDisappear(_:)))
-                swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
-                
-                return 0
-            }()
-        }
-        
-        return Private.setupOnce
+public final class ViewState {
+    public static func setupOnce() {
+        _ = UIViewController.setupOnce
     }
+}
+
+private extension UIViewController {
+    @objc static let setupOnce: Int = {
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParent:)), swizzledSelector: #selector(swizzled_willMove(toParent:)))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(becomeFirstResponder), swizzledSelector: #selector(swizzled_becomeFirstResponder))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidAppear(_:)), swizzledSelector: #selector(swizzled_viewDidAppear(_:)))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillDisappear(_:)), swizzledSelector: #selector(swizzled_viewWillDisappear(_:)))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidDisappear(_:)), swizzledSelector: #selector(swizzled_viewDidDisappear(_:)))
+        
+        return 0
+    }()
 }
 
 // ******************************* MARK: - ViewState and Notifications
