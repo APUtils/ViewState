@@ -9,10 +9,10 @@ language: swift
 cache:
     directories:
      - Carthage
-     - 'Pods Project/Pods'
+     - Pods\ Project/Pods
 
 before_install:
-- 'Pods Project/Scripts/Cocoapods/podInstall.command'
+- Pods\ Project/Scripts/Cocoapods/podInstall.command
 - brew install carthage
 
 script:
