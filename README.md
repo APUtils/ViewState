@@ -1,6 +1,7 @@
 # ViewState
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![Version](https://img.shields.io/cocoapods/v/ViewState.svg?style=flat)](http://cocoapods.org/pods/ViewState)
 [![License](https://img.shields.io/cocoapods/l/ViewState.svg?style=flat)](http://cocoapods.org/pods/ViewState)
 [![Platform](https://img.shields.io/cocoapods/p/ViewState.svg?style=flat)](http://cocoapods.org/pods/ViewState)
