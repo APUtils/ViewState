@@ -23,7 +23,7 @@ final class ViewController: UIViewController {
     // ******************************* MARK: - Actions
     
     @IBAction private func onTableViewReloadTap(_ sender: Any) {
-        let vc = TableViewReloadVC.instantiateFromStoryboard()
-        navigationController?.pushViewController(vc)
+        let vc = UIStoryboard(name: "TableViewReload", bundle: nil).instantiateInitialViewController() as! TableViewReloadVC
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
