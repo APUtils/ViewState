@@ -44,7 +44,7 @@ Once you have your Swift package set up, adding `ViewState` as a dependency is a
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/APExtensions/ViewState.git", .upToNextMajor(from: "1.2.0"))
+    .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "1.2.0"))
 ]
 ```
 

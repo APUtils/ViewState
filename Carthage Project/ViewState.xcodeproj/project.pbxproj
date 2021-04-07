@@ -149,6 +149,7 @@
 		0DB148B4261DD3F1006472B8 /* ViewState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB148B6261DD3F1006472B8 /* ViewState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewState.h; sourceTree = "<group>"; };
 		0DB148B7261DD3F1006472B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB148D2261DDF22006472B8 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APExtensions.framework; path = ../Carthage/Build/iOS/APExtensions.framework; sourceTree = "<group>"; };
 		1C5A34472F3C42C9D5F152C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		27A65933230C2FF4F758F562 /* carthageUpdate.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = Scripts/Carthage/carthageUpdate.command; sourceTree = "<group>"; };
@@ -375,6 +376,7 @@
 				CF98C5D1FAB5DE4EB64C5514 /* .cocoadocs.yml */,
 				37064B493B53566F8541EE78 /* .travis.yml */,
 				AC1EFE4B7E6DDA1FE67B22B5 /* ViewState.podspec */,
+				0DB148D2261DDF22006472B8 /* Package.swift */,
 				F2A3275B604D77110F9A75DB /* LICENSE */,
 				28390494B0B4A7796DD7B55A /* DEPLOY PROCESS.md */,
 				C50F8B4A85322A518874FDF3 /* CHANGELOG.md */,
