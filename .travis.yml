@@ -14,6 +14,7 @@ cache:
 before_install:
 - Pods\ Project/Scripts/Cocoapods/podInstall.command
 - brew install carthage
+- Carthage\ Project/Scripts/Carthage/carthageInstallTests.command
 
 script:
 - bash checkBuild.command
