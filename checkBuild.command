@@ -39,7 +39,7 @@ set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphones
 set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -target "ViewState-Example-tvOS" | xcpretty
 
 echo -e "\nBuilding with Carthage..."
-carthage build --no-skip-current --cache-builds
+carthage build --no-skip-current --platform iOS,tvOS --cache-builds
 
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"
