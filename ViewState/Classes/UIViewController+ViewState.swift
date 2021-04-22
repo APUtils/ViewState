@@ -243,6 +243,10 @@ private class HideKeyboardGestureRecognizerDelegate: NSObject, UIGestureRecogniz
         // Do not dismiss on contol element clicks. Like button, switch or segment.
         return !(touch.view is UIControl)
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
 
 public extension UIViewController {
