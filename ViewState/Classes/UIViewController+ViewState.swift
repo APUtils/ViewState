@@ -10,9 +10,9 @@ import UIKit
 
 
 #if DEBUG
-    private let c_debugViewState = false
+private let c_debugViewState = false
 #else
-    private let c_debugViewState = false
+private let c_debugViewState = false
 #endif
 
 // ******************************* MARK: - Swizzle Functions
@@ -56,6 +56,7 @@ public final class ViewState {
 private extension UIViewController {
     @objc static let setupOnce: Int = {
         swizzleMethods(class: UIViewController.self, originalSelector: #selector(willMove(toParent:)), swizzledSelector: #selector(swizzled_willMove(toParent:)))
+        swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillLayoutSubviews), swizzledSelector: #selector(swizzled_viewWillLayoutSubviews))
         swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewDidLoad), swizzledSelector: #selector(swizzled_viewDidLoad))
         swizzleMethods(class: UIViewController.self, originalSelector: #selector(viewWillAppear(_:)), swizzledSelector: #selector(swizzled_viewWillAppear(_:)))
         swizzleMethods(class: UIViewController.self, originalSelector: #selector(becomeFirstResponder), swizzledSelector: #selector(swizzled_becomeFirstResponder))
@@ -177,6 +178,23 @@ extension UIViewController {
         swizzled_viewDidLoad()
     }
     
+    private func checkDidAttach() {
+        guard viewState == .willAppear, view.window != nil else { return }
+        
+        viewState = .didAttach
+        let userInfo: [String: Any] = ["viewState": viewState]
+        NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewDidAttach()
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
+    }
+    
+    @objc private func swizzled_viewWillLayoutSubviews() {
+        checkDidAttach()
+        
+        swizzled_viewWillLayoutSubviews()
+    }
+    
     @objc private func swizzled_viewWillAppear(_ animated: Bool) {
         viewState = .willAppear
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
@@ -188,21 +206,15 @@ extension UIViewController {
     }
     
     @objc private func swizzled_becomeFirstResponder() -> Bool {
-        if viewState == .willAppear {
-            viewState = .didAttach
-            let userInfo: [String: Any] = ["viewState": viewState]
-            NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self, userInfo: userInfo)
-            (self as? ViewControllerExtendedStates)?.viewDidAttach()
-            NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
-            (self as? ViewControllerExtendedStates)?.viewStateDidChange()
-        } else {
-            if c_debugViewState { self.log("becomeFirstResponder") }
-        }
+        checkDidAttach()
         
         return swizzled_becomeFirstResponder()
     }
     
     @objc private func swizzled_viewDidAppear(_ animated: Bool) {
+        // In case we skipped become first responder we still need to transfer through `.didAttach` state.
+        checkDidAttach()
+        
         viewState = .didAppear
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: userInfo)
@@ -317,6 +329,7 @@ public extension UIViewController {
         log("\(viewState)")
     }
     
+    // TODO: Route logs
     private func log(_ string: String) {
         let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
         let className = "\(type(of: self))"
