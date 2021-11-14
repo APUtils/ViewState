@@ -24,6 +24,6 @@ Adds an ability to check a view controller's view state and also to subscribe to
   s.tvos.deployment_target = '9.0'
   s.swift_versions = ['5.1']
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'RoutableLogger'
+  s.dependency 'RoutableLogger', '>= 9.1.11'
   s.source_files = 'ViewState/Classes/**/*'
 end

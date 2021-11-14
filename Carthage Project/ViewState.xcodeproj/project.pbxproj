@@ -356,10 +356,10 @@
 				0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */,
 				0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */,
 				0D47E41723BF32A500C4BFDC /* UITableView+ViewState.swift */,
+				0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */,
 				0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */,
 				0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */,
 				0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */,
-				0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */,
 			);
 			name = Sources;
 			path = ../../ViewState/Classes;
