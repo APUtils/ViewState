@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0D33EA5A23BEAF2E00DE5C50 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */; };
-		0D47E41823BF32A500C4BFDC /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */; };
-		0D47E41A23BF32E800C4BFDC /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */; };
+		0D36C8AA2741411C0061D2F0 /* UIView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */; };
+		0D36C8AB2741411C0061D2F0 /* UIView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */; };
+		0D36C8AC2741490E0061D2F0 /* APExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; };
+		0D36C8AD2741490E0061D2F0 /* APExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D36C8AE274149110061D2F0 /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; };
+		0D36C8AF274149110061D2F0 /* RoutableLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D36C8B0274149180061D2F0 /* APExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; };
+		0D36C8B1274149180061D2F0 /* APExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBC7CE723B9577200CD0EA1 /* APExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D36C8B22741491A0061D2F0 /* RoutableLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; };
+		0D36C8B32741491A0061D2F0 /* RoutableLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D45AB1C26194E6400B575FF /* RoutableLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D47E41823BF32A500C4BFDC /* UITableView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+ViewState.swift */; };
+		0D47E41A23BF32E800C4BFDC /* UIView+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Internal.swift */; };
 		0D47E41F23BF3A4E00C4BFDC /* TableViewReload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */; };
 		0D47E42123BF3A4E00C4BFDC /* TableViewReloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41E23BF3A4E00C4BFDC /* TableViewReloadVC.swift */; };
 		0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; };
@@ -33,8 +43,8 @@
 		0DB148B8261DD3F1006472B8 /* ViewState.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB148B6261DD3F1006472B8 /* ViewState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DB148BB261DD3F1006472B8 /* ViewState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB148B4261DD3F1006472B8 /* ViewState.framework */; };
 		0DB148BC261DD3F1006472B8 /* ViewState.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB148B4261DD3F1006472B8 /* ViewState.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0DB148C1261DD5F6006472B8 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */; };
-		0DB148C2261DD5F6006472B8 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */; };
+		0DB148C1261DD5F6006472B8 /* UITableView+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41723BF32A500C4BFDC /* UITableView+ViewState.swift */; };
+		0DB148C2261DD5F6006472B8 /* UIView+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D47E41923BF32E800C4BFDC /* UIView+Internal.swift */; };
 		0DB148C3261DD5F6006472B8 /* ViewStateLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */; };
 		0DB148C4261DD5F6006472B8 /* UIResponder+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */; };
 		0DB148C5261DD5F6006472B8 /* UIViewController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */; };
@@ -107,7 +117,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0D36C8B32741491A0061D2F0 /* RoutableLogger.framework in Embed Frameworks */,
 				0DB148BC261DD3F1006472B8 /* ViewState.framework in Embed Frameworks */,
+				0D36C8B1274149180061D2F0 /* APExtensions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +130,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0D36C8AF274149110061D2F0 /* RoutableLogger.framework in Embed Frameworks */,
 				0DB148CE261DD7BF006472B8 /* ViewState.framework in Embed Frameworks */,
+				0D36C8AD2741490E0061D2F0 /* APExtensions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,9 +142,10 @@
 /* Begin PBXFileReference section */
 		0491600AEA500A849511DBA7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSnapshotTestCase.framework; path = Carthage/Build/iOS/FBSnapshotTestCase.framework; sourceTree = "<group>"; };
 		0D33EA5923BEAF2E00DE5C50 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ViewState.swift"; sourceTree = "<group>"; };
 		0D45AB1C26194E6400B575FF /* RoutableLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RoutableLogger.framework; path = ../Carthage/Build/iOS/RoutableLogger.framework; sourceTree = "<group>"; };
-		0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
-		0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
+		0D47E41723BF32A500C4BFDC /* UITableView+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ViewState.swift"; sourceTree = "<group>"; };
+		0D47E41923BF32E800C4BFDC /* UIView+Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Internal.swift"; sourceTree = "<group>"; };
 		0D47E41C23BF3A4E00C4BFDC /* TableViewReload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewReload.storyboard; sourceTree = "<group>"; };
 		0D47E41E23BF3A4E00C4BFDC /* TableViewReloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewReloadVC.swift; sourceTree = "<group>"; };
 		0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+ViewState.swift"; sourceTree = "<group>"; };
@@ -192,7 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D36C8B22741491A0061D2F0 /* RoutableLogger.framework in Frameworks */,
 				0DB148BB261DD3F1006472B8 /* ViewState.framework in Frameworks */,
+				0D36C8B0274149180061D2F0 /* APExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +231,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D36C8AE274149110061D2F0 /* RoutableLogger.framework in Frameworks */,
 				0DB148CD261DD7BF006472B8 /* ViewState.framework in Frameworks */,
+				0D36C8AC2741490E0061D2F0 /* APExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +298,7 @@
 		0DC724F523CD16D3005039BC /* _Internal Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0D47E41923BF32E800C4BFDC /* UIView+Internal.swift */,
 			);
 			path = "_Internal Extensions";
 			sourceTree = "<group>";
@@ -335,11 +355,11 @@
 				0DC724F523CD16D3005039BC /* _Internal Extensions */,
 				0D4DBCD723BE9976003D5F8B /* UIResponder+ViewState.swift */,
 				0D4DBCD823BE9976003D5F8B /* UIScrollView+ViewState.swift */,
-				0D47E41723BF32A500C4BFDC /* UITableView+Utils.swift */,
-				0D47E41923BF32E800C4BFDC /* UIView+Utils.swift */,
+				0D47E41723BF32A500C4BFDC /* UITableView+ViewState.swift */,
 				0D4DBCDA23BE9976003D5F8B /* UIViewController+ViewState.swift */,
 				0D4DBCDB23BE9976003D5F8B /* ViewStateLoader.h */,
 				0D4DBCDC23BE9977003D5F8B /* ViewStateLoader.m */,
+				0D36C8A92741411C0061D2F0 /* UIView+ViewState.swift */,
 			);
 			name = Sources;
 			path = ../../ViewState/Classes;
@@ -536,7 +556,7 @@
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Anton Plebanovich";
 				TargetAttributes = {
 					0DB14893261DD2B1006472B8 = {
@@ -699,10 +719,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB148C7261DD5F6006472B8 /* UIScrollView+ViewState.swift in Sources */,
-				0DB148C2261DD5F6006472B8 /* UIView+Utils.swift in Sources */,
+				0D36C8AB2741411C0061D2F0 /* UIView+ViewState.swift in Sources */,
+				0DB148C2261DD5F6006472B8 /* UIView+Internal.swift in Sources */,
 				0DB148C5261DD5F6006472B8 /* UIViewController+ViewState.swift in Sources */,
 				0DB148C4261DD5F6006472B8 /* UIResponder+ViewState.swift in Sources */,
-				0DB148C1261DD5F6006472B8 /* UITableView+Utils.swift in Sources */,
+				0DB148C1261DD5F6006472B8 /* UITableView+ViewState.swift in Sources */,
 				0DB148C3261DD5F6006472B8 /* ViewStateLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,11 +733,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D4DBCDE23BE9977003D5F8B /* UIScrollView+ViewState.swift in Sources */,
+				0D36C8AA2741411C0061D2F0 /* UIView+ViewState.swift in Sources */,
 				0D4DBCE023BE9977003D5F8B /* UIViewController+ViewState.swift in Sources */,
 				0D4DBCE223BE9977003D5F8B /* ViewStateLoader.m in Sources */,
 				0D4DBCDD23BE9977003D5F8B /* UIResponder+ViewState.swift in Sources */,
-				0D47E41A23BF32E800C4BFDC /* UIView+Utils.swift in Sources */,
-				0D47E41823BF32A500C4BFDC /* UITableView+Utils.swift in Sources */,
+				0D47E41A23BF32E800C4BFDC /* UIView+Internal.swift in Sources */,
+				0D47E41823BF32A500C4BFDC /* UITableView+ViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

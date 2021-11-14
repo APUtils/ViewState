@@ -17,7 +17,19 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Animatable viewDidLoad: \(view.isAnimatable)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        print("Animatable viewWillAppear: \(view.isAnimatable)")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print("Animatable viewDidAppear: \(view.isAnimatable)")
     }
     
     // ******************************* MARK: - Actions

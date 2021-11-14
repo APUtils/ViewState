@@ -7,13 +7,7 @@
 //
 
 import UIKit
-
-
-#if DEBUG
-private let c_debugViewState = false
-#else
-private let c_debugViewState = false
-#endif
+import RoutableLogger
 
 // ******************************* MARK: - Swizzle Functions
 
@@ -153,7 +147,7 @@ extension UIViewController {
         }
         set {
             objc_setAssociatedObject(self, &associatedStateKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if c_debugViewState { logViewState() }
+            logViewState(newValue)
         }
     }
     
@@ -325,14 +319,9 @@ public extension UIViewController {
     
     // ******************************* MARK: - Private Methods
     
-    private func logViewState() {
-        log("\(viewState)")
-    }
-    
-    // TODO: Route logs
-    private func log(_ string: String) {
+    private func logViewState(_ viewState: ViewState) {
         let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
         let className = "\(type(of: self))"
-        print("\(pointer) - \(className) - \(string)")
+        RoutableLogger.logVerbose("\(pointer) - \(className) - \(viewState)")
     }
 }

@@ -55,7 +55,6 @@ public extension UIScrollView {
                     // Perform each time on did appear
                     _self.flashScrollIndicatorsNotificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: viewController, queue: nil) { _ in
                         guard let _self = self else { return }
-                        // Reset this flag so we can assign it again later if needed
                         _self.flashScrollIndicators()
                     }
                 }
@@ -64,8 +63,9 @@ public extension UIScrollView {
                     becomeFirstResponderOnViewDidAppearClosure(viewController)
                 } else {
                     // No viewController means it's initialization from storyboard. Have to wait.
-                    DispatchQueue.main.async {
-                        becomeFirstResponderOnViewDidAppearClosure(self._viewController)
+                    DispatchQueue.main.async { [weak self] in
+                        guard let _self = self else { return }
+                        becomeFirstResponderOnViewDidAppearClosure(_self._viewController)
                     }
                 }
             } else {

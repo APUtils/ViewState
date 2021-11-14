@@ -1,5 +1,5 @@
 //
-//  UITableView+Utils.swift
+//  UITableView+ViewState.swift
 //  ViewState
 //
 //  Created by Anton Plebanovich on 1/3/20.

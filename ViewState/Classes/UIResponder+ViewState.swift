@@ -7,19 +7,11 @@
 //
 
 import UIKit
-
-
-#if DEBUG
-    private let c_debugBecomeFirstResponder = false
-#else
-    private let c_debugBecomeFirstResponder = false
-#endif
-
+import RoutableLogger
 
 private var c_becomeMainResponderAssociationKey = 0
 private var c_becomeFirstResponderWhenPossibleAssociationKey = 0
 private var c_becomeFirstResponderOnViewDidAppearAssociationKey = 0
-
 
 public extension UIResponder {
     private var _viewController: UIViewController? {
@@ -82,7 +74,7 @@ public extension UIResponder {
                 if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
                     // Already appeared
                     becomeFirstResponder()
-                    if c_debugBecomeFirstResponder { self.log("becomeMainRespoder") }
+                    RoutableLogger.logVerbose("Becoming main responder for: \(self)")
                     
                 } else {
                     // Wait until appeared
@@ -96,14 +88,20 @@ public extension UIResponder {
                         }
                         // Assure notification for proper controller
                         guard _self._viewController == notification.object as? UIViewController else { return }
-                        // Assure view is loaded and has window
-                        guard _self._viewController?.isViewLoaded == true && _self._viewController?.view.window != nil else { return }
-                        // Assure it's appear notification
-                        guard let viewState = notification.userInfo?["viewState"] as? UIViewController.ViewState else { return }
-                        guard viewState == .didAttach || viewState == .willAppear || viewState == .didAppear else { return }
                         
+                        // Assure view is loaded and has window
+                        guard _self._viewController?.isViewLoaded == true
+                                && _self._viewController?.view.window != nil else { return }
+                        
+                        // Assure it's appear notification
+                        guard let viewState: UIViewController.ViewState = notification.userInfo?["viewState"] as? UIViewController.ViewState else { return }
+                        
+                        guard viewState == UIViewController.ViewState.didAttach
+                                || viewState == UIViewController.ViewState.willAppear
+                                || viewState == UIViewController.ViewState.didAppear else { return }
+                        
+                        RoutableLogger.logVerbose("Becoming main responder for: \(_self)")
                         _self.becomeFirstResponder()
-                        if c_debugBecomeFirstResponder { _self.log("becomeMainRespoder") }
                     }
                     stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
                 }
@@ -128,12 +126,14 @@ public extension UIResponder {
             _becomeFirstResponderWhenPossible = newValue
             
             if newValue {
-                let vc = _viewController
-                if vc?.viewState == .didAttach || vc?.viewState == .didAppear {
+                let vc: UIViewController? = _viewController
+                if vc?.viewState == UIViewController.ViewState.didAttach
+                    || vc?.viewState == UIViewController.ViewState.didAppear {
+                    
                     // Already appeared
                     _becomeFirstResponderWhenPossible = false
                     becomeFirstResponder()
-                    if c_debugBecomeFirstResponder { self.log("becomeFirstResponderWhenPossible") }
+                    RoutableLogger.logVerbose("Becoming first responder possible for: \(self)")
                     
                 } else {
                     // Wait until appeared
@@ -157,7 +157,7 @@ public extension UIResponder {
                         _self._becomeFirstResponderWhenPossible = false
                         
                         _self.becomeFirstResponder()
-                        if c_debugBecomeFirstResponder { _self.log("becomeFirstResponderWhenPossible") }
+                        RoutableLogger.logVerbose("Becoming first responder possible for: \(_self)")
                     }
                     stateDidChangedToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewStateDidChange, object: vc, queue: nil, using: handleNotification)
                 }
@@ -182,12 +182,12 @@ public extension UIResponder {
             _becomeFirstResponderOnViewDidAppear = newValue
             
             if newValue {
-                let vc = _viewController
-                if vc?.viewState == .didAppear {
+                let vc: UIViewController? = _viewController
+                if vc?.viewState == UIViewController.ViewState.didAppear {
                     // Already appeared
                     _becomeFirstResponderOnViewDidAppear = false
+                    RoutableLogger.logVerbose("Becoming first responder on view did appear for: \(self)")
                     becomeFirstResponder()
-                    if c_debugBecomeFirstResponder { self.log("becomeFirstResponderOnViewDidAppear") }
                     
                 } else {
                     // Wait until appeared
@@ -207,21 +207,13 @@ public extension UIResponder {
                         
                         // Reset this flag so we can assign it again later if needed
                         _self._becomeFirstResponderOnViewDidAppear = false
+                        RoutableLogger.logVerbose("Becoming first responder on view did appear for: \(_self)")
                         _self.becomeFirstResponder()
-                        if c_debugBecomeFirstResponder { _self.log("becomeFirstResponderOnViewDidAppear") }
                     }
                 }
             } else {
                 
             }
         }
-    }
-    
-    // ******************************* MARK: - Private Methods
-    
-    private func log(_ string: String) {
-        let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
-        let className = "\(type(of: self))"
-        print("\(pointer) - \(className) - \(string)")
     }
 }
