@@ -14,10 +14,13 @@ public extension UIView {
     /// Returns `true` if view can be animated.
     /// That means `window` is not `nil` and application state is `.active`.
     var isAnimatable: Bool {
-        var isAnimatable = window != nil && UIApplication.shared.applicationState != .background
+        var isAnimatable = window != nil
+        && UIApplication.shared.applicationState != .background
+        && UIView.areAnimationsEnabled
         
-        if let viewState = _viewController?.viewState {
-            isAnimatable = isAnimatable && viewState == .didAppear
+        // No sense to animate anything if view didn't yet appear.
+        if isAnimatable, let vc = _viewController {
+            isAnimatable = vc.viewState == .didAppear
         }
         
         return isAnimatable
