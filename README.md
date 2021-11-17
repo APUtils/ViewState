@@ -25,6 +25,8 @@ Cartfile:
 github "APUtils/ViewState" ~> 1.2
 ```
 
+Install command: `carthage bootstrap --use-xcframeworks`
+
 #### CocoaPods
 
 ViewState is available through [CocoaPods](http://cocoapods.org). To install
