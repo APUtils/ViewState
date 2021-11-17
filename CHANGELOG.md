@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file.
 `ViewState` adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.3](https://github.com/APUtils/ViewState/releases/tag/1.2.3)
+Released on 11/17/2021.
+
+#### Added
+- Routable logs
+- UIView .animateIfNeeded(layout:duration:delay:options:animations:completion:)
+- UIView .animateTransitionIfNeeded(layout:duration:delay:options:animations:completion:)
+- UIView.animateIfNeeded(view:layout:duration:delay:options:animations:completion:)
+- UIView.animateTransitionIfNeeded(view:layout:duration:delay:options:animations:completion:)
+
+#### Changed
+- Improve UIView .isAnimatable
+
+#### Fixed
+- Fixed simultaneous work with other gesture recognizers for keyboard dismiss recognizer
+- Did attach state fix for iOS 15.0
+
+
 ## [1.2.0](https://github.com/APUtils/ViewState/releases/tag/1.2.0)
 Released on 07/04/2021.
 

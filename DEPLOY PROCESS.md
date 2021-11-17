@@ -1,7 +1,9 @@
-- Assure `Carthage Project/ViewState.xcodeproj` and `Pods Project/ViewState.xcworkspace` have all dependencies added.
+- Assure `Carthage Project/ViewState.xcodeproj` have all dependencies added.
+- Run `podUpdate.command`
+- Run `carthageUpdate.command`
+- Run `swift package update`
 - Run `checkBuild.command`
 - Change version in podspec
-- Run `podUpdate.command`
 - Update CHANGELOG.md
 - Update README.md with new version if needed
 - Push changes in git

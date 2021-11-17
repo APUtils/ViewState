@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RoutableLogger",
+        "repositoryURL": "https://github.com/APUtils/LogsManager.git",
+        "state": {
+          "branch": null,
+          "revision": "d7d6b941df0fe68a50c37e2d34bad92bc07ac0ef",
+          "version": "9.1.19"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

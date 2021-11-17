@@ -8,7 +8,7 @@ PODS:
   - APExtensions/Storyboard (10.0.0)
   - APExtensions/ViewConfiguration (10.0.0)
   - RoutableLogger (9.1.12)
-  - ViewState (1.2.1):
+  - ViewState (1.2.3):
     - RoutableLogger (>= 9.1.11)
 
 DEPENDENCIES:
@@ -34,7 +34,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   APExtensions: 61ac6903670be0a2dba70dacbc4bd39f768e47af
   RoutableLogger: 9ad367e9a79df59c3cf5a1707ba9598ffbae8784
-  ViewState: f11ab8b0b1e367755fec94cea1017e07a6d875b9
+  ViewState: d6492d0434d2ee6013c270c1431dbe73cc895b75
 
 PODFILE CHECKSUM: 95c0096510056c2389483764db1fa1ea8f3d4a21
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ViewState'
-  s.version          = '1.2.1'
+  s.version          = '1.2.3'
   s.summary          = 'Adds an ability to check a view controller\'s view state.'
 
   s.description      = <<-DESC
