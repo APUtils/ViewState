@@ -18,9 +18,9 @@ public extension UIView {
         && UIApplication.shared.applicationState != .background
         && UIView.areAnimationsEnabled
         
-        // No sense to animate anything if view didn't yet appear.
+        // No sense to animate anything if view is not in a view hierarchy yet
         if isAnimatable, let vc = _viewController {
-            isAnimatable = vc.viewState == .didAppear
+            isAnimatable = vc.viewState == .didAttach || vc.viewState == .didAppear
         }
         
         return isAnimatable

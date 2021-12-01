@@ -58,7 +58,7 @@ else
     fi
 fi
 
-set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -scheme "Example" -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
+set -o pipefail && xcodebuild -workspace "Pods Project/ViewState.xcworkspace" -scheme "ViewState-Example" -sdk iphonesimulator -destination "platform=iOS Simulator,id=${simulator_id}" test | xcpretty
 
 echo ""
 echo "SUCCESS!"
