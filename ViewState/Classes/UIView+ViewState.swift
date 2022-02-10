@@ -6,6 +6,7 @@
 //  Copyright © 2021 Anton Plebanovich. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import RoutableLogger
 
@@ -31,7 +32,7 @@ public extension UIView {
     /// Perform changes animated if receiver is animatable and `duration` more than 0.
     /// Just perform changes otherwise.
     func animateIfNeeded(layout: Bool = true,
-                         duration: TimeInterval = 0.3,
+                         duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                          delay: TimeInterval = 0,
                          options: UIView.AnimationOptions = [],
                          animations: @escaping () -> Void,
@@ -56,7 +57,7 @@ public extension UIView {
     /// Just perform changes otherwise.
     static func animateIfNeeded(view: UIView,
                                 layout: Bool = true,
-                                duration: TimeInterval = 0.3,
+                                duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                 delay: TimeInterval = 0,
                                 options: UIView.AnimationOptions = [],
                                 animations: @escaping () -> Void,
@@ -97,7 +98,7 @@ public extension UIView {
     // ******************************* MARK: - Transition
     
     func animateTransitionIfNeeded(layout: Bool = true,
-                                   duration: TimeInterval = 0.3,
+                                   duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                    delay: TimeInterval = 0,
                                    options: UIView.AnimationOptions = [],
                                    animations: @escaping () -> Void,
@@ -120,7 +121,7 @@ public extension UIView {
     
     static func animateTransitionIfNeeded(view: UIView,
                                           layout: Bool = true,
-                                          duration: TimeInterval = 0.3,
+                                          duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                           delay: TimeInterval = 0,
                                           options: UIView.AnimationOptions = [],
                                           animations: @escaping () -> Void,
@@ -159,4 +160,14 @@ public extension UIView {
             completion?(true)
         }
     }
+}
+
+// ******************************* MARK: - Constants
+
+public extension UIView {
+    enum ViewStateConstants {}
+}
+
+public extension UIView.ViewStateConstants {
+    static var defaultAnimationDuration: TimeInterval = 0.3
 }
