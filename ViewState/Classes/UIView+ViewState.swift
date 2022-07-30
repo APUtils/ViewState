@@ -21,7 +21,11 @@ public extension UIView {
         
         // No sense to animate anything if view is not in a view hierarchy yet
         if isAnimatable, let vc = _viewController {
-            isAnimatable = vc.viewState == .didAttach || vc.viewState == .didAppear
+            isAnimatable = vc.viewState == .didAttach
+            || vc.viewState == .didAppear
+            || vc.viewState == .willDisappear
+            // We animate if view disappear but is still attached because it might be visible underneath
+            || vc.viewState == .didDisappear
         }
         
         return isAnimatable
