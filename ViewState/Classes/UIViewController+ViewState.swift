@@ -97,6 +97,10 @@ public extension Notification.Name {
     /// You may check `object` notification's property for UIViewController object and `userInfo["animated"]` or `userInfo["viewState"]` parameters if needed.
     static let UIViewControllerViewDidDisappear = Notification.Name("UIViewControllerViewDidDisappear")
     
+    /// Called after viewDidDisappear if view is detached from the window.
+    /// You may check `object` notification's property for UIViewController object and `userInfo["viewState"]` parameters if needed.
+    static let UIViewControllerViewDidDetach = Notification.Name("UIViewControllerViewDidDetach")
+    
     /// UIViewController viewState did changed notification.
     /// You may check `object` notification's property for UIViewController object.
     /// `userInfo` dictionary contains `viewState` param and may contain `animated` and `parent` parameters depending on case.
@@ -108,11 +112,13 @@ public extension Notification.Name {
 /// You can conform to that protocol in your view controller to get .viewDidAttach() and .viewStateDidChange() calls
 public protocol ViewControllerExtendedStates {
     func viewDidAttach()
+    func viewDidDetach()
     func viewStateDidChange()
 }
 
 public extension ViewControllerExtendedStates {
     func viewDidAttach() {}
+    func viewDidDetach() {}
     func viewStateDidChange() {}
 }
 
@@ -128,6 +134,7 @@ extension UIViewController {
         case didAppear = 4
         case willDisappear = 5
         case didDisappear = 6
+        case didDetach = 7
         
         /// Return whether state is one of passed ones.
         func isOneOf(states: [ViewState]) -> Bool {
@@ -236,6 +243,19 @@ extension UIViewController {
         (self as? ViewControllerExtendedStates)?.viewStateDidChange()
         
         swizzled_viewDidDisappear(animated)
+        
+        checkDidDetach()
+    }
+    
+    private func checkDidDetach() {
+        guard viewState == .didDisappear, view.window == nil else { return }
+        
+        viewState = .didDetach
+        let userInfo: [String: Any] = ["viewState": viewState]
+        NotificationCenter.default.post(name: .UIViewControllerViewDidDetach, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewDidDetach()
+        NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
+        (self as? ViewControllerExtendedStates)?.viewStateDidChange()
     }
 }
 
