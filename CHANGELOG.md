@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file.
 `ViewState` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [2.0.0](https://github.com/APUtils/ViewState/releases/tag/2.0.0)
+Released on `2023-01-30`
+
+#### Added
+- Allow to specify default animation duration using `UIView.ViewStateConstants.defaultAnimationDuration`
+- `.didDetach` state
+
+#### Changed
+- Min OS versions increase
+- `isAnimatable` logic adjust
+
+#### Fixed
+- UIView isAnimatable fix
+
+
 ## [1.2.3](https://github.com/APUtils/ViewState/releases/tag/1.2.3)
 Released on 11/17/2021.
 

@@ -136,14 +136,22 @@ extension UIViewController {
         case didDisappear = 6
         case didDetach = 7
         
+        public var isVisible: Bool {
+            isOneOf([.didAttach, .didAppear, .willDisappear])
+        }
+        
+        public var isInvisible: Bool {
+            isOneOf([.notLoaded, .didLoad, .willAppear, .didDisappear, .didDetach])
+        }
+        
         /// Return whether state is one of passed ones.
-        func isOneOf(states: [ViewState]) -> Bool {
+        public func isOneOf(_ states: [ViewState]) -> Bool {
             return states.contains(self)
         }
     }
     
     /// View controller view's state
-    open var viewState: ViewState {
+    public var viewState: ViewState {
         get {
             if let state = objc_getAssociatedObject(self, &associatedStateKey) as? ViewState {
                 return state
@@ -315,11 +323,11 @@ public extension UIViewController {
                     if isViewLoaded {
                         view.addGestureRecognizer(hideKeyboardGestureRecognizer)
                     } else {
-                        var notificationToken: NSObjectProtocol!
+                        let storage = TokenStorage()
                         
                         // TODO: There is a possible memory leak if view is never loaded and VC is dealocated. Better solution would be to have closures executed at a specific time and dealocated together with VC.
-                        notificationToken = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
-                            if let notificationToken = notificationToken { NotificationCenter.default.removeObserver(notificationToken) }
+                        storage.token =  NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
+                            if let token = storage.token { NotificationCenter.default.removeObserver(token) }
                             
                             if let hideRecognizer = self?.hideKeyboardGestureRecognizer {
                                 self?.view.addGestureRecognizer(hideRecognizer)

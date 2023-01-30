@@ -22,7 +22,7 @@ Please check [official guide](https://github.com/Carthage/Carthage#if-youre-buil
 Cartfile:
 
 ```
-github "APUtils/ViewState" ~> 1.2
+github "APUtils/ViewState" ~> 2.0
 ```
 
 Install command: `carthage bootstrap --use-xcframeworks`
@@ -33,7 +33,7 @@ ViewState is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ViewState', '~> 1.2'
+pod 'ViewState', '~> 2.0'
 ```
 
 #### Swift Package Manager
@@ -46,7 +46,7 @@ Once you have your Swift package set up, adding `ViewState` as a dependency is a
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "1.2.1"))
+    .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 

@@ -191,19 +191,19 @@ public extension UIResponder {
                     
                 } else {
                     // Wait until appeared
-                    var token: NSObjectProtocol!
-                    token = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: vc, queue: nil) { [weak self] notification in
+                    let storage = TokenStorage()
+                    storage.token = NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidAppear, object: vc, queue: nil) { [weak self] notification in
                         guard let _self = self, _self._becomeFirstResponderOnViewDidAppear else {
                             // Object no longer exists or no longer notification no longer needed.
                             // Remove observer.
-                            if let token = token { NotificationCenter.default.removeObserver(token) }
+                            if let token = storage.token { NotificationCenter.default.removeObserver(token) }
                             return
                         }
                         // Assure notification for proper controller
                         guard _self._viewController == notification.object as? UIViewController else { return }
                         
                         // Got our notification. Remove observer.
-                        if let token = token { NotificationCenter.default.removeObserver(token) }
+                        if let token = storage.token { NotificationCenter.default.removeObserver(token) }
                         
                         // Reset this flag so we can assign it again later if needed
                         _self._becomeFirstResponderOnViewDidAppear = false

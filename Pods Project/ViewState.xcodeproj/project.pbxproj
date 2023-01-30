@@ -27,6 +27,13 @@
 		0D47705623B79E79005209A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D47E42323BF419300C4BFDC /* TableViewReload.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewReload.storyboard; sourceTree = "<group>"; };
 		0D47E42423BF419300C4BFDC /* TableViewReloadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReloadVC.swift; sourceTree = "<group>"; };
+		0DDA924829878CAB00F5BBBD /* ViewState.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = ViewState.podspec; path = ../ViewState.podspec; sourceTree = "<group>"; };
+		0DDA924929878CB200F5BBBD /* DEPLOY PROCESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = "DEPLOY PROCESS.md"; path = "../DEPLOY PROCESS.md"; sourceTree = "<group>"; };
+		0DDA924A29878CBD00F5BBBD /* carthageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = carthageUpdate.command; path = "../Carthage Project/Scripts/Carthage/carthageUpdate.command"; sourceTree = "<group>"; };
+		0DDA924B29878CD800F5BBBD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
+		0DDA924C29878CE000F5BBBD /* podPush.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = podPush.command; path = ../podPush.command; sourceTree = "<group>"; };
+		0DDA924F29878FCD00F5BBBD /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		0DDA92512987914600F5BBBD /* checkBuild.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = checkBuild.command; path = ../checkBuild.command; sourceTree = "<group>"; };
 		3CE575328DA2F3DC72C33211 /* Pods-ViewState_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewState_Example.release.xcconfig"; path = "Target Support Files/Pods-ViewState_Example/Pods-ViewState_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ViewState_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewState_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +130,13 @@
 		607FACF51AFB993E008FA782 /* _ */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA924A29878CBD00F5BBBD /* carthageUpdate.command */,
+				0DDA924F29878FCD00F5BBBD /* CHANGELOG.md */,
+				0DDA92512987914600F5BBBD /* checkBuild.command */,
+				0DDA924929878CB200F5BBBD /* DEPLOY PROCESS.md */,
+				0DDA924B29878CD800F5BBBD /* Package.swift */,
+				0DDA924C29878CE000F5BBBD /* podPush.command */,
+				0DDA924829878CAB00F5BBBD /* ViewState.podspec */,
 			);
 			name = _;
 			sourceTree = "<group>";
@@ -178,7 +192,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -324,6 +338,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -349,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -381,6 +396,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -399,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
