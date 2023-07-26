@@ -180,7 +180,6 @@ extension UIViewController {
         }
         set {
             objc_setAssociatedObject(self, &associatedStateKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            logViewState(newValue)
         }
     }
     
@@ -197,6 +196,7 @@ extension UIViewController {
     
     @objc private func swizzled_viewDidLoad() {
         viewState = .didLoad
+        logViewState(viewState, animated: nil)
         let userInfo: [String: Any] = ["viewState": viewState]
         NotificationCenter.default.post(name: .UIViewControllerViewDidLoad, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
@@ -209,6 +209,7 @@ extension UIViewController {
         guard viewState == .willAppear, view.window != nil else { return }
         
         viewState = .didAttach
+        logViewState(viewState, animated: nil)
         let userInfo: [String: Any] = ["viewState": viewState]
         NotificationCenter.default.post(name: .UIViewControllerViewDidAttach, object: self, userInfo: userInfo)
         (self as? ViewControllerExtendedStates)?.viewDidAttach()
@@ -224,6 +225,7 @@ extension UIViewController {
     
     @objc private func swizzled_viewWillAppear(_ animated: Bool) {
         viewState = .willAppear
+        logViewState(viewState, animated: animated)
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewWillAppear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
@@ -243,6 +245,7 @@ extension UIViewController {
         checkDidAttach()
         
         viewState = .didAppear
+        logViewState(viewState, animated: animated)
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewDidAppear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
@@ -264,6 +267,7 @@ extension UIViewController {
     
     @objc private func swizzled_viewWillDisappear(_ animated: Bool) {
         viewState = .willDisappear
+        logViewState(viewState, animated: animated)
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewWillDisappear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
@@ -274,6 +278,7 @@ extension UIViewController {
     
     @objc private func swizzled_viewDidDisappear(_ animated: Bool) {
         viewState = .didDisappear
+        logViewState(viewState, animated: animated)
         let userInfo: [String: Any] = ["viewState": viewState, "animated": animated]
         NotificationCenter.default.post(name: .UIViewControllerViewDidDisappear, object: self, userInfo: userInfo)
         NotificationCenter.default.post(name: .UIViewControllerViewStateDidChange, object: self, userInfo: userInfo)
@@ -281,13 +286,14 @@ extension UIViewController {
         
         swizzled_viewDidDisappear(animated)
         
-        checkDidDetach()
+        checkDidDetach(animated)
     }
     
-    private func checkDidDetach() {
+    private func checkDidDetach(_ animated: Bool) {
         guard viewState == .didDisappear, view.window == nil else { return }
         
         viewState = .didDetach
+        logViewState(viewState, animated: animated)
         let userInfo: [String: Any] = ["viewState": viewState]
         NotificationCenter.default.post(name: .UIViewControllerViewDidDetach, object: self, userInfo: userInfo)
         (self as? ViewControllerExtendedStates)?.viewDidDetach()
@@ -376,16 +382,34 @@ public extension UIViewController {
     
     // ******************************* MARK: - Private Methods
     
-    private func logViewState(_ viewState: ViewState) {
+    private func logViewState(_ viewState: ViewState, animated: Bool?) {
         let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
         let className = "\(type(of: self))"
-        RoutableLogger.logVerbose("\(pointer) - \(className) - \(viewState)")
+        if let animated {
+            RoutableLogger.logVerbose("\(_pointerDescription) view \(viewState) \(animated._asAnimatedString)")
+        } else {
+            RoutableLogger.logVerbose("\(_pointerDescription) view \(viewState)")
+        }
     }
     
     private func logState(_ state: String, parent: UIViewController?) {
+        RoutableLogger.logVerbose("\(_pointerDescription) \(state): \(parent?._pointerDescription ?? "nil")")
+    }
+}
+
+private extension Bool {
+    
+    /// Returns "with animations" for `true` and "without animations" for `false`
+    var _asAnimatedString: String {
+        self ? "with animations" : "without animations"
+    }
+}
+
+private extension UIViewController {
+    
+    var _pointerDescription: String {
         let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
-        let parentString = parent.map { "\(type(of: $0))" } ?? "nil"
         let className = "\(type(of: self))"
-        RoutableLogger.logVerbose("\(pointer) - \(className) - \(state): \(parentString)")
+        return "<\(className): \(pointer)>"
     }
 }
