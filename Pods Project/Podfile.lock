@@ -1,24 +1,40 @@
 PODS:
-  - APExtensions (11.0.1):
-    - APExtensions/Core (= 11.0.1)
-    - APExtensions/Storyboard (= 11.0.1)
-    - APExtensions/ViewModel (= 11.0.1)
-  - APExtensions/Core (11.0.1):
+  - APExtensions (14.1.1):
+    - APExtensions/Core (= 14.1.1)
+    - APExtensions/Dispatch (= 14.1.1)
+    - APExtensions/Storyboard (= 14.1.1)
+    - APExtensions/ViewModel (= 14.1.1)
+  - APExtensions/Core (14.1.1):
     - RoutableLogger
-  - APExtensions/Storyboard (11.0.1):
+  - APExtensions/Dispatch (14.1.1):
     - RoutableLogger
-  - APExtensions/ViewModel (11.0.1)
-  - RoutableLogger (12.0.2)
-  - ViewState (2.0.0):
+  - APExtensions/Storyboard (14.1.1):
+    - RoutableLogger
+  - APExtensions/ViewModel (14.1.1)
+  - RoutableLogger (12.3.3)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - ViewState/Core (2.0.0):
     - RoutableLogger (>= 9.1.11)
+  - ViewState/RxSwift (2.0.0):
+    - RxCocoa
+    - RxSwift
+    - ViewState/Core
 
 DEPENDENCIES:
   - APExtensions (from `https://github.com/APUtils/APExtensions`, branch `master`)
-  - ViewState (from `../`)
+  - ViewState/RxSwift (from `../`)
 
 SPEC REPOS:
   trunk:
     - RoutableLogger
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 EXTERNAL SOURCES:
   APExtensions:
@@ -29,14 +45,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: aa433d531d127128987216945c16b0a8f865f1b3
+    :commit: 31396decfab1fd95f7e02b6c92ac111bc25d5e01
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: 292b0b2bec52042c18c6c523e606ae27477093c0
-  RoutableLogger: 5437307106ecb12ede54836f575348694d1a7f19
-  ViewState: 2443ba39d84bf9780fad2f5cd8909c81c62d4de5
+  APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
+  RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  ViewState: d321918d4d442686168f7cff227a7e47d2508efc
 
-PODFILE CHECKSUM: f53e8f3b945f9f0b33978c6975e6d20ff5ac8a79
+PODFILE CHECKSUM: 1de944eac9c2bc82e81f61b3af29a00b8a0150ce
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3

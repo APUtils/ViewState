@@ -383,8 +383,6 @@ public extension UIViewController {
     // ******************************* MARK: - Private Methods
     
     private func logViewState(_ viewState: ViewState, animated: Bool?) {
-        let pointer = Unmanaged<AnyObject>.passUnretained(self).toOpaque().debugDescription
-        let className = "\(type(of: self))"
         if let animated {
             RoutableLogger.logVerbose("\(_pointerDescription) view \(viewState) \(animated._asAnimatedString)")
         } else {
