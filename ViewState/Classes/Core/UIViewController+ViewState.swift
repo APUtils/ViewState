@@ -361,7 +361,7 @@ public extension UIViewController {
                         let storage = TokenStorage()
                         
                         // TODO: There is a possible memory leak if view is never loaded and VC is dealocated. Better solution would be to have closures executed at a specific time and dealocated together with VC.
-                        storage.token =  NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: nil, queue: nil, using: { [weak self] n in
+                        storage.token =  NotificationCenter.default.addObserver(forName: .UIViewControllerViewDidLoad, object: self, queue: nil, using: { [weak self] n in
                             if let token = storage.token { NotificationCenter.default.removeObserver(token) }
                             
                             if let hideRecognizer = self?.hideKeyboardGestureRecognizer {
