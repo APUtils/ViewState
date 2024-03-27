@@ -20,7 +20,7 @@ ViewState is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ViewState', '~> 2.0'
+pod 'ViewState', '~> 2.1'
 ```
 
 #### Swift Package Manager
@@ -33,7 +33,7 @@ Once you have your Swift package set up, adding `ViewState` as a dependency is a
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "2.0.0"))
+    .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "2.1.0"))
 ]
 ```
 

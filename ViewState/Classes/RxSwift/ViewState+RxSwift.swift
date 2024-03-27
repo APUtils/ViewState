@@ -8,13 +8,16 @@
 
 import RxSwift
 import UIKit
+#if SPM
+import ViewState
+#endif
 
 // ******************************* MARK: - UIViewController
 
 public extension Reactive where Base: UIViewController {
     
     /// Reactive wrapper for `viewState` property. Returns current state on subscription.
-    var viewState: Observable<Base.ViewState> {
+    var viewState: Observable<UIViewController.ViewState> {
         NotificationCenter.default.rx.notification(.UIViewControllerViewStateDidChange, object: base)
             .compactMap { notification in notification.userInfo?["viewState"] as? Base.ViewState }
         // Reentrancy anomaly fix

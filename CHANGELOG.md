@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 `ViewState` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.1.0](https://github.com/APUtils/ViewState/releases/tag/2.1.0)
+Released on `2024-03-27`
+
+#### Added
+- ViewState: CustomStringConvertible
+- `UIViewControllerDidMoveToParentViewController` notifcation
+- Move to parent logs
+- `RxSwift` subspec
+
+#### Changed
+- Do not trigger `UIViewControllerViewStateDidChange` and `viewStateDidChange` on `willMove(toParent:)` call as view's state is not changed there
+- Better view state logs
+- Better state logs
+
+#### Fixed
+- Preventive view load with enabled `hideKeyboardOnTouch` fix
+
+#### Removed
+- Carthage support
+
 
 ## [2.0.0](https://github.com/APUtils/ViewState/releases/tag/2.0.0)
 Released on `2023-01-30`

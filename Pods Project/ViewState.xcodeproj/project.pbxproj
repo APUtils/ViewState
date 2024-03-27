@@ -40,6 +40,8 @@
 		607FACDC1AFB9204008FA782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D9AA213686BC27EF1F457E /* Pods_ViewState_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViewState_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18B43DCAE51B4AB0D398351 /* Pods-ViewState_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewState_Example.debug.xcconfig"; path = "Target Support Files/Pods-ViewState_Example/Pods-ViewState_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E24C526F2BB45ED900C6C999 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E24C52702BB45FA900C6C999 /* packageUpdate.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = packageUpdate.command; path = ../packageUpdate.command; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +135,9 @@
 				0DDA92512987914600F5BBBD /* checkBuild.command */,
 				0DDA924929878CB200F5BBBD /* DEPLOY PROCESS.md */,
 				0DDA924B29878CD800F5BBBD /* Package.swift */,
+				E24C52702BB45FA900C6C999 /* packageUpdate.command */,
 				0DDA924C29878CE000F5BBBD /* podPush.command */,
+				E24C526F2BB45ED900C6C999 /* README.md */,
 				0DDA924829878CAB00F5BBBD /* ViewState.podspec */,
 			);
 			name = _;
@@ -191,7 +195,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {

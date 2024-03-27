@@ -1,16 +1,24 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "RoutableLogger",
-        "repositoryURL": "https://github.com/APUtils/LogsManager.git",
-        "state": {
-          "branch": null,
-          "revision": "3a3b22fbfb5a2af934113c21001746c229bf28f2",
-          "version": "9.1.20"
-        }
+  "originHash" : "2df05a99bea98eb6e12bfbdbe1ace415d12480ec629b5e41839ebbe612e4c8ff",
+  "pins" : [
+    {
+      "identity" : "routablelogger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anton-plebanovich/RoutableLogger",
+      "state" : {
+        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
+        "version" : "1.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
+    }
+  ],
+  "version" : 3
 }

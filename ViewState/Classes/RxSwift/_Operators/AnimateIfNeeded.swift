@@ -8,6 +8,9 @@
 
 import RxSwift
 import UIKit
+#if SPM
+import ViewState
+#endif
 
 public extension Reactive where Base: UIView {
     

@@ -1,16 +1,20 @@
 PODS:
-  - APExtensions (14.1.1):
-    - APExtensions/Core (= 14.1.1)
-    - APExtensions/Dispatch (= 14.1.1)
-    - APExtensions/Storyboard (= 14.1.1)
-    - APExtensions/ViewModel (= 14.1.1)
-  - APExtensions/Core (14.1.1):
+  - APExtensions (14.2.0):
+    - APExtensions/Core (= 14.2.0)
+    - APExtensions/Dispatch (= 14.2.0)
+    - APExtensions/Occupiable (= 14.2.0)
+    - APExtensions/OptionalType (= 14.2.0)
+    - APExtensions/Storyboard (= 14.2.0)
+    - APExtensions/ViewModel (= 14.2.0)
+  - APExtensions/Core (14.2.0):
     - RoutableLogger
-  - APExtensions/Dispatch (14.1.1):
+  - APExtensions/Dispatch (14.2.0):
     - RoutableLogger
-  - APExtensions/Storyboard (14.1.1):
+  - APExtensions/Occupiable (14.2.0)
+  - APExtensions/OptionalType (14.2.0)
+  - APExtensions/Storyboard (14.2.0):
     - RoutableLogger
-  - APExtensions/ViewModel (14.1.1)
+  - APExtensions/ViewModel (14.2.0)
   - RoutableLogger (12.3.3)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
@@ -18,9 +22,9 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - ViewState/Core (2.0.0):
+  - ViewState/Core (2.1.0):
     - RoutableLogger (>= 9.1.11)
-  - ViewState/RxSwift (2.0.0):
+  - ViewState/RxSwift (2.1.0):
     - RxCocoa
     - RxSwift
     - ViewState/Core
@@ -45,17 +49,17 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APExtensions:
-    :commit: 31396decfab1fd95f7e02b6c92ac111bc25d5e01
+    :commit: 7cead7483a09dcf0de15264361f809014166d995
     :git: https://github.com/APUtils/APExtensions
 
 SPEC CHECKSUMS:
-  APExtensions: 82c75dcd17db568a21a21f801101a8913cc8604f
+  APExtensions: 06c059d069034fb32db789432ee889274b453435
   RoutableLogger: ff5425f9ec26ec79241a591a1ed16a7a69d70b2f
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  ViewState: d321918d4d442686168f7cff227a7e47d2508efc
+  ViewState: dcc7032ca1a5534afac24e6d6af311b129d0f3bc
 
 PODFILE CHECKSUM: 1de944eac9c2bc82e81f61b3af29a00b8a0150ce
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
