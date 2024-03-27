@@ -5,43 +5,8 @@ set -e
 base_dir=$(dirname "$0")
 cd "$base_dir"
 
-echo ""
-echo -e "\nChecking Carthage integrity..."
-carthage_xcodeproj_path="Carthage Project/ViewState.xcodeproj"
-carthage_pbxproj_path="${carthage_xcodeproj_path}/project.pbxproj"
-swift_files=$(find 'ViewState/Classes' -type f -name "*.swift" | grep -o "[0-9a-zA-Z+ ]*.swift" | sort -fu)
-swift_files_count=$(echo "${swift_files}" | wc -l | tr -d ' ')
-
-build_section_id=$(sed -n -e '/\/\* ViewState \*\/ = {/,/};/p' "${carthage_pbxproj_path}" | sed -n '/PBXNativeTarget/,/Sources/p' | tail -1 | tr -d "\t" | cut -d ' ' -f 1)
-swift_files_in_project=$(sed -n "/${build_section_id}.* = {/,/};/p" "${carthage_pbxproj_path}" | grep -o "[A-Z].[0-9a-zA-Z+ ]*\.swift" | sort -fu)
-swift_files_in_project_count=$(echo "${swift_files_in_project}" | wc -l | tr -d ' ')
-if [ "${swift_files_count}" -ne "${swift_files_in_project_count}" ]; then
-    echo  >&2 "error: Carthage project missing dependencies."
-    echo -e "\nFinder files:\n${swift_files}"
-    echo -e "\nProject files:\n${swift_files_in_project}"
-    echo -e "\nMissing dependencies:"
-    comm -23 <(echo "${swift_files}") <(echo "${swift_files_in_project}")
-    echo " "
-	exit 1
-fi
-
-echo -e "\nBuilding Swift Package for iOS..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-ios14.4-simulator"
-
-echo -e "\nBuilding Swift Package for tvOS..."
-swift build -Xswiftc "-sdk" -Xswiftc "`xcrun --sdk appletvsimulator --show-sdk-path`" -Xswiftc "-target" -Xswiftc "x86_64-apple-tvos14.3-simulator"
-
 echo -e "\nBuilding Pods project..."
 set -o pipefail && xcodebuild -workspace "Pods Project/ViewState.xcworkspace" -scheme "ViewState-Example" -configuration "Release" -sdk iphonesimulator | xcpretty
-
-echo -e "\nBuilding Carthage project..."
-. "./Carthage Project/Scripts/Carthage/utils.sh"
-applyXcode12Workaround
-set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -target "Example" | xcpretty
-set -o pipefail && xcodebuild -project "${carthage_xcodeproj_path}" -sdk iphonesimulator -target "ViewState tvOS" | xcpretty
-
-echo -e "\nBuilding with Carthage..."
-carthage build --no-skip-current --platform iOS,tvOS --cache-builds
 
 echo -e "\nPerforming tests..."
 simulator_id="$(xcrun simctl list devices available iPhone | grep " SE " | tail -1 | sed -e "s/.*(\([0-9A-Z-]*\)).*/\1/")"

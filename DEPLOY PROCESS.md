@@ -1,7 +1,5 @@
-- Assure `Carthage Project/ViewState.xcodeproj` have all dependencies added.
 - Change version in podspec
 - Run `podUpdate.command`
-- Run `carthageUpdate.command`
 - Run `swift package update`
 - Run `checkBuild.command`
 - Update CHANGELOG.md
