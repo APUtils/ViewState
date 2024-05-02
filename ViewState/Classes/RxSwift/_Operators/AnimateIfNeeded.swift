@@ -14,37 +14,11 @@ import ViewState
 
 public extension Reactive where Base: UIView {
     
-    /// Perform changes animated if `view` is animatable and `duration` more than 0.
+    /// Perform changes animated if `view` is animatable, `animate` is `true`, and `duration` more than 0.
     /// Just perform changes otherwise.
     static func animateIfNeeded(
-        view: UIView,
-        duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
-        delay: TimeInterval = 0,
-        options: UIView.AnimationOptions = [],
-        animations: @escaping () -> Void,
-        file: String = #file,
-        function: String = #function,
-        line: UInt = #line
-    ) -> Single<Bool> {
-        
-        Single<Bool>.create { finish in
-            UIView.animateIfNeeded(
-                view: view,
-                duration: duration,
-                delay: delay,
-                options: options,
-                animations: animations,
-                completion: { finish(.success($0)) },
-                file: file,
-                function: function,
-                line: line
-            )
-            
-            return Disposables.create()
-        }
-    }
-    
-    func animateIfNeeded(
+        in view: UIView,
+        animated: Bool = true,
         layout: Bool = true,
         duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
         delay: TimeInterval = 0,
@@ -57,7 +31,8 @@ public extension Reactive where Base: UIView {
         
         Single<Bool>.create { finish in
             UIView.animateIfNeeded(
-                view: base,
+                in: view,
+                animated: animated,
                 layout: layout,
                 duration: duration,
                 delay: delay,
@@ -73,8 +48,10 @@ public extension Reactive where Base: UIView {
         }
     }
     
-    static func animateTransitionIfNeeded(
-        view: UIView,
+    /// Perform changes animated if `base` is animatable, `animate` is `true`, and `duration` more than 0.
+    func animateIfNeeded(
+        layout: Bool = true,
+        animated: Bool = true,
         duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
         delay: TimeInterval = 0,
         options: UIView.AnimationOptions = [],
@@ -85,8 +62,10 @@ public extension Reactive where Base: UIView {
     ) -> Single<Bool> {
         
         Single<Bool>.create { finish in
-            UIView.animateTransitionIfNeeded(
-                view: view,
+            UIView.animateIfNeeded(
+                in: base,
+                animated: animated,
+                layout: layout,
                 duration: duration,
                 delay: delay,
                 options: options,
@@ -101,7 +80,10 @@ public extension Reactive where Base: UIView {
         }
     }
     
-    func animateTransitionIfNeeded(
+    /// Perform changes animated if `view` is animatable, `animate` is `true`, and `duration` more than 0.
+    static func animateTransitionIfNeeded(
+        in view: UIView,
+        animated: Bool = true,
         layout: Bool = true,
         duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
         delay: TimeInterval = 0,
@@ -114,7 +96,39 @@ public extension Reactive where Base: UIView {
         
         Single<Bool>.create { finish in
             UIView.animateTransitionIfNeeded(
-                view: base,
+                in: view,
+                animated: animated,
+                duration: duration,
+                delay: delay,
+                options: options,
+                animations: animations,
+                completion: { finish(.success($0)) },
+                file: file,
+                function: function,
+                line: line
+            )
+            
+            return Disposables.create()
+        }
+    }
+    
+    /// Perform changes animated if `base` is animatable, `animate` is `true`, and `duration` more than 0.
+    func animateTransitionIfNeeded(
+        animated: Bool = true,
+        layout: Bool = true,
+        duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
+        delay: TimeInterval = 0,
+        options: UIView.AnimationOptions = [],
+        animations: @escaping () -> Void,
+        file: String = #file,
+        function: String = #function,
+        line: UInt = #line
+    ) -> Single<Bool> {
+        
+        Single<Bool>.create { finish in
+            UIView.animateTransitionIfNeeded(
+                in: base,
+                animated: animated,
                 layout: layout,
                 duration: duration,
                 delay: delay,

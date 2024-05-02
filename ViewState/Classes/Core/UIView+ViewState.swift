@@ -33,9 +33,10 @@ public extension UIView {
     
     // ******************************* MARK: - Animate
     
-    /// Perform changes animated if receiver is animatable and `duration` more than 0.
+    /// Perform changes animated if `self` is animatable, `animate` is `true`, and `duration` more than 0.
     /// Just perform changes otherwise.
-    func animateIfNeeded(layout: Bool = true,
+    func animateIfNeeded(animated: Bool = true,
+                         layout: Bool = true,
                          duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                          delay: TimeInterval = 0,
                          options: UIView.AnimationOptions = [],
@@ -45,7 +46,8 @@ public extension UIView {
                          function: String = #function,
                          line: UInt = #line) {
         
-        Self.animateIfNeeded(view: self,
+        Self.animateIfNeeded(in: self,
+                             animated: animated,
                              layout: layout,
                              duration: duration,
                              delay: delay,
@@ -57,9 +59,10 @@ public extension UIView {
                              line: line)
     }
     
-    /// Perform changes animated if `view` is animatable and `duration` more than 0.
+    /// Perform changes animated if `view` is animatable, `animate` is `true`, and `duration` more than 0.
     /// Just perform changes otherwise.
-    static func animateIfNeeded(view: UIView,
+    static func animateIfNeeded(in view: UIView,
+                                animated: Bool = true,
                                 layout: Bool = true,
                                 duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                 delay: TimeInterval = 0,
@@ -70,7 +73,7 @@ public extension UIView {
                                 function: String = #function,
                                 line: UInt = #line) {
         
-        let animated = view.isAnimatable && duration > 0
+        let animated = animated && view.isAnimatable && duration > 0
         
         let animate: () -> Void = {
             let date = Date()
@@ -101,7 +104,9 @@ public extension UIView {
     
     // ******************************* MARK: - Transition
     
-    func animateTransitionIfNeeded(layout: Bool = true,
+    /// Perform changes animated if `self` is animatable, `animate` is `true`, and `duration` more than 0.
+    func animateTransitionIfNeeded(animated: Bool = true,
+                                   layout: Bool = true,
                                    duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                    delay: TimeInterval = 0,
                                    options: UIView.AnimationOptions = [],
@@ -111,7 +116,8 @@ public extension UIView {
                                    function: String = #function,
                                    line: UInt = #line) {
         
-        Self.animateTransitionIfNeeded(view: self,
+        Self.animateTransitionIfNeeded(in: self,
+                                       animated: animated,
                                        layout: layout,
                                        duration: duration,
                                        delay: delay,
@@ -123,7 +129,9 @@ public extension UIView {
                                        line: line)
     }
     
-    static func animateTransitionIfNeeded(view: UIView,
+    /// Perform changes animated if `view` is animatable, `animate` is `true`, and `duration` more than 0.
+    static func animateTransitionIfNeeded(in view: UIView,
+                                          animated: Bool = true,
                                           layout: Bool = true,
                                           duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                           delay: TimeInterval = 0,
@@ -134,7 +142,7 @@ public extension UIView {
                                           function: String = #function,
                                           line: UInt = #line) {
         
-        let animated = view.isAnimatable && duration > 0
+        let animated = animated && view.isAnimatable && duration > 0
         
         let animate: () -> Void = {
             let date = Date()
