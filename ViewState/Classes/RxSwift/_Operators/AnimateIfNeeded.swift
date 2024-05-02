@@ -50,8 +50,8 @@ public extension Reactive where Base: UIView {
     
     /// Perform changes animated if `base` is animatable, `animate` is `true`, and `duration` more than 0.
     func animateIfNeeded(
-        layout: Bool = true,
         animated: Bool = true,
+        layout: Bool = true,
         duration: TimeInterval = UIView.ViewStateConstants.defaultAnimationDuration,
         delay: TimeInterval = 0,
         options: UIView.AnimationOptions = [],
