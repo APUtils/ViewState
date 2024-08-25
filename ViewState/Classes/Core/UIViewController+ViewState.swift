@@ -206,7 +206,7 @@ extension UIViewController {
     }
     
     private func checkDidAttach() {
-        guard viewState == .willAppear, view.window != nil else { return }
+        guard viewState == .willAppear || viewState == .didDetach, view.window != nil else { return }
         
         viewState = .didAttach
         logViewState(viewState, animated: nil)
