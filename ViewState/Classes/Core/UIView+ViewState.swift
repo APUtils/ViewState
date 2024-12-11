@@ -89,15 +89,13 @@ public extension UIView {
         if animated {
             UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
                 animate()
-                
-                if layout {
-                    view.layoutIfNeeded()
-                }
+                if layout { view.layoutIfNeeded() }
                 
             }, completion: completion)
             
         } else {
             animate()
+            if layout { view.layoutIfNeeded() }
             completion?(true)
         }
     }
@@ -159,16 +157,14 @@ public extension UIView {
             UIView.transition(with: view, duration: duration, options: options, animations: {
                 UIView.performWithoutAnimation {
                     animate()
-                    
-                    if layout {
-                        view.layoutIfNeeded()
-                    }
+                    if layout { view.layoutIfNeeded() }
                 }
                 
             }, completion: completion)
             
         } else {
             animate()
+            if layout { view.layoutIfNeeded() }
             completion?(true)
         }
     }
