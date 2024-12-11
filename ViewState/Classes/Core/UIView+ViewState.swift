@@ -95,7 +95,6 @@ public extension UIView {
             
         } else {
             animate()
-            if layout { view.layoutIfNeeded() }
             completion?(true)
         }
     }
@@ -164,7 +163,6 @@ public extension UIView {
             
         } else {
             animate()
-            if layout { view.layoutIfNeeded() }
             completion?(true)
         }
     }
