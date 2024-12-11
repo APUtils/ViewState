@@ -40,6 +40,7 @@ public extension UIView {
                          duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                          delay: TimeInterval = 0,
                          options: UIView.AnimationOptions = [],
+                         scrollView: UIScrollView? = nil,
                          animations: @escaping () -> Void,
                          completion: ((Bool) -> Void)? = nil,
                          file: String = #file,
@@ -52,6 +53,7 @@ public extension UIView {
                              duration: duration,
                              delay: delay,
                              options: options,
+                             scrollView: scrollView,
                              animations: animations,
                              completion: completion,
                              file: file,
@@ -67,6 +69,7 @@ public extension UIView {
                                 duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                 delay: TimeInterval = 0,
                                 options: UIView.AnimationOptions = [],
+                                scrollView: UIScrollView? = nil,
                                 animations: @escaping () -> Void,
                                 completion: ((Bool) -> Void)? = nil,
                                 file: String = #file,
@@ -86,15 +89,20 @@ public extension UIView {
             }
         }
         
+        // Keep content offset that might be damaged during updates
+        let contentOffsetY = scrollView?.contentOffset.y
+        
         if animated {
             UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
                 animate()
+                contentOffsetY.map { scrollView?.contentOffset.y = $0 }
                 if layout { view.layoutIfNeeded() }
                 
             }, completion: completion)
             
         } else {
             animate()
+            contentOffsetY.map { scrollView?.contentOffset.y = $0 }
             completion?(true)
         }
     }
@@ -107,6 +115,7 @@ public extension UIView {
                                    duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                    delay: TimeInterval = 0,
                                    options: UIView.AnimationOptions = [],
+                                   scrollView: UIScrollView? = nil,
                                    animations: @escaping () -> Void,
                                    completion: ((Bool) -> Void)? = nil,
                                    file: String = #file,
@@ -119,6 +128,7 @@ public extension UIView {
                                        duration: duration,
                                        delay: delay,
                                        options: options,
+                                       scrollView: scrollView,
                                        animations: animations,
                                        completion: completion,
                                        file: file,
@@ -133,6 +143,7 @@ public extension UIView {
                                           duration: TimeInterval = ViewStateConstants.defaultAnimationDuration,
                                           delay: TimeInterval = 0,
                                           options: UIView.AnimationOptions = [],
+                                          scrollView: UIScrollView? = nil,
                                           animations: @escaping () -> Void,
                                           completion: ((Bool) -> Void)? = nil,
                                           file: String = #file,
@@ -152,10 +163,14 @@ public extension UIView {
             }
         }
         
+        // Keep content offset that might be damaged during updates
+        let contentOffsetY = scrollView?.contentOffset.y
+        
         if animated {
             UIView.transition(with: view, duration: duration, options: options, animations: {
                 UIView.performWithoutAnimation {
                     animate()
+                    contentOffsetY.map { scrollView?.contentOffset.y = $0 }
                     if layout { view.layoutIfNeeded() }
                 }
                 
@@ -163,6 +178,7 @@ public extension UIView {
             
         } else {
             animate()
+            contentOffsetY.map { scrollView?.contentOffset.y = $0 }
             completion?(true)
         }
     }
