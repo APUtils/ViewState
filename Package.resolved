@@ -1,13 +1,13 @@
 {
-  "originHash" : "2df05a99bea98eb6e12bfbdbe1ace415d12480ec629b5e41839ebbe612e4c8ff",
+  "originHash" : "e8f44956cb8f5a9cd4d060b7abc9f1de023509f35f9a8ebc6b0d2ed07a65b396",
   "pins" : [
     {
       "identity" : "routablelogger",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/anton-plebanovich/RoutableLogger",
       "state" : {
-        "revision" : "754e0972cbf364e3bdfc27a0ad618eae50b6ef4c",
-        "version" : "1.0.0"
+        "revision" : "e544488de124ab2a72a4e2490759ab6a8a084701",
+        "version" : "2.0.0"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
-        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
-        "version" : "6.6.0"
+        "revision" : "5dd1907d64f0d36f158f61a466bab75067224893",
+        "version" : "6.9.0"
       }
     }
   ],
