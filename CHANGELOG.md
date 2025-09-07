@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 `ViewState` adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [3.0.0](https://github.com/APUtils/ViewState/releases/tag/3.0.0)
+Released on `2025-09-07`
+
+#### Added
+- [UIView] `animated` parameter for view animate if needed methods
+- [AnimateIfNeeded] `scrollView` parameter to make sure content offset stays the same after changes
+- [Logs] Subscribe on visible log
+
+#### Changed
+- [UIView] Rename `view` parameter to `in view`
+
+
 ## [2.1.0](https://github.com/APUtils/ViewState/releases/tag/2.1.0)
 Released on `2024-03-27`
 
