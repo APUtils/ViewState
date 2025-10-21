@@ -31,6 +31,8 @@ Once you have your Swift package set up, adding `ViewState` as a dependency is a
 
 **⚠️ WARNING** You must call `ViewState.setupOnce()` somewhere in you code or it won't work. The issue is that SPM doesn't support mixed source code and the framework can't load himself without Objective-C part.
 
+**⚠️ WARNING** When used in the same project with NewRelic or other libraries that may swizzle view controller methods, the `ViewState.setupOnce()` should be called before the `NewRelic.start(withApplicationToken:)`.
+
 ```swift
 dependencies: [
     .package(url: "https://github.com/APUtils/ViewState.git", .upToNextMajor(from: "3.0.0"))
