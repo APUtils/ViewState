@@ -26,6 +26,8 @@ public extension UIView {
             || vc.viewState == .willDisappear
             // We animate if view disappear but is still attached because it might be visible underneath
             || vc.viewState == .didDisappear
+            // Animate when under presented view controller during its dismiss
+            || vc.viewState == .willAppear && vc.presentedViewController != nil
         }
         
         return isAnimatable
